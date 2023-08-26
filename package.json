@@ -1,0 +1,11 @@
+{
+  "name": "ban-banh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "do",
+  "scripts": {
+    "test": "do"
+  },
+  "author": "VANDU",
+  "license": "ISC"
+}

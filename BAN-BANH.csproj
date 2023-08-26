@@ -1,0 +1,28 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <RootNamespace>BAN_BANH</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include=".option\" />
+    <Folder Include="Views\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\statics\bootstrap\js\bootstrap.min.js" />
+    <None Include="wwwroot\statics\img\design\brush.svg" />
+    <None Include="wwwroot\statics\js\aos.min.js" />
+    <None Include="wwwroot\statics\js\bs-init.js" />
+    <None Include="wwwroot\statics\js\color.js" />
+    <None Include="wwwroot\statics\js\jquery.min.js" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
+  </ItemGroup>
+
+</Project>

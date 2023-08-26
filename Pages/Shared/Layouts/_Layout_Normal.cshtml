@@ -1,0 +1,46 @@
+﻿
+@{
+}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>BANBANH</title>
+    <link rel="stylesheet" href="~/statics/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coiny&amp;subset=vietnamese&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,500,500i,600,600i,700,700i&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick+Hand&amp;display=swap">
+    <link rel="stylesheet" href="~/statics/css/aos.min.css">
+    <link rel="stylesheet" href="~/statics/css/animate.min.css">
+    <link rel="stylesheet" href="~/statics/css/color.css">
+    <link rel="stylesheet" href="~/statics/css/Swiper-Image.css">
+
+    @await RenderSectionAsync("colori", required: false)
+</head>
+<body>
+
+
+
+
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/statics/js/jquery.min.js"></script>
+    <script src="~/statics/bootstrap/js/bootstrap.min.js"></script>
+    <script src="~/statics/js/aos.min.js"></script>
+    <script src="~/statics/js/bs-init.js"></script>
+    <script src="~/statics/js/lib/Swiper-Image-Lightgallery.js"></script>
+    <script src="~/statics/js/color.js"></script>
+    <script src="~/statics/js/lib/Swiper-Image-Swiper.js"></script>
+
+    @await RenderSectionAsync("colorii", required: false)
+</body>
+</html>

@@ -1,0 +1,21 @@
+﻿@using Model;
+
+@model Comment;
+
+@{
+
+    StarCountImage sci = new StarCountImage()
+            {
+                mode = "comment",
+                number = Model.Rate
+            };
+}
+
+
+<div class="item-comment-product">
+    <div class="vote-name-and-time"><span class="name-cus-product">@Model.Ten</span><span>@ViewData["date"]</span></div>
+    <div class="comment-n-vote">
+        @await Component.InvokeAsync("StarCount", sci)
+        <p>@Model.BinhLuan</p>
+    </div>
+</div>
