@@ -73,5 +73,25 @@ namespace BAN_BANH.Method
             }
             return obj;
         }
+        public List<ImageGalleryProduct> ParseImageProduct(SqlDataReader reader) {
+            var listImage = new List<ImageGalleryProduct>();
+            while (reader.Read())
+            {
+                var item = new ImageGalleryProduct()
+                {
+                    id = reader["id"].ToString(),
+                    imageUrl = reader["imageUrl"].ToString(),
+                    productID = Convert.ToInt32(reader["productID"]),
+                    time = Convert.ToInt32(reader["time"]),
+
+
+                };
+
+                listImage.Add(item);
+            }
+            return listImage;
+
+        }
+    
     }
 }

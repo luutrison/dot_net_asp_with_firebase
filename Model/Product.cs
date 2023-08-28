@@ -47,4 +47,12 @@
         public string mode { get; set; }
     }
 
+    public class ImageGalleryProduct
+    {
+        public string id { get; set; }
+        public string imageUrl { get; set; }
+        public int time { get; set; }
+        public int productID { get; set; }
+    }
+
 }

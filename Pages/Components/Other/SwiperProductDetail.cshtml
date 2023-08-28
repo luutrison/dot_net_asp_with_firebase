@@ -1,0 +1,33 @@
+﻿@using Model
+@model List<ImageGalleryProduct>
+
+@{
+    var listItem = "";
+    foreach (var item in Model)
+    {
+        listItem+= $" <div class=\"swiper-slide\" data-src=\"{item.imageUrl}\"><div class=\"image-frame img-ratio-1x1\"><img src=\"{item.imageUrl}\" /></div></div>";
+    }
+}
+
+
+
+    <div class="swiper swipe-detail-product">
+        <div class="swiper-wrapper">
+
+            @Html.Raw(listItem)
+
+        </div>
+        <div id="nav-swpro">
+            <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" id="prev-swpro">
+                <path d="M16.2426 6.34317L14.8284 4.92896L7.75739 12L14.8285 19.0711L16.2427 17.6569L10.5858 12L16.2426 6.34317Z" fill="currentColor"></path>
+            </svg><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none" id="next-swpro">
+                <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" fill="currentColor"></path>
+            </svg>
+        </div>
+    </div>
+    <div class="swiper swipe-detail-pthump">
+        <div class="swiper-wrapper">
+        @Html.Raw(listItem)
+        </div>
+    </div>
+

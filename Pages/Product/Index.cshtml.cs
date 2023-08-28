@@ -20,6 +20,8 @@ namespace BAN_BANH.Pages.Product
             var st = _configuration.GetSection("setting").Get<Setting>();
             var id = RouteData.Values["id"];
 
+            ViewData["config"] = _configuration;
+
             try
             {
                 using (SqlConnection connect = new SqlConnection(st.DatabaseConnectionString))

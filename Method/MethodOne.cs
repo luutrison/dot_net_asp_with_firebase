@@ -79,7 +79,7 @@ namespace BAN_BANH.Method
             try
             {
                 var title = KhongDau(Ten);
-                return subLinkName + "/" + title + "-p-" + Id;
+                return "/" + subLinkName + "/" + title + "-p-" + Id;
             }
             catch (Exception)
             {
@@ -95,6 +95,8 @@ namespace BAN_BANH.Method
 
             return Math.Round(avg, 1);
         }
+
+
 
       
     }

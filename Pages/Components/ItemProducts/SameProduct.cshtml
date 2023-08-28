@@ -1,0 +1,20 @@
+﻿@using Model
+@using Method
+@model List<SanPham>
+@{
+    var meth = new MethodOne();
+}
+
+@foreach (var item in Model)
+{
+    var url = meth.URLSanPham(item.ten, item.id);
+    <div class="item-same-product">
+        <a class="image-same-product" href="@url">
+            <div class="image-frame img-ratio-1x1"><img src="@item.anh"></div>
+        </a>
+        <div class="info-samep">
+            <a class="name-product-same" href="@url">@item.ten</a>
+            <div><span class="money">@item.gia</span><span class="money">đ</span></div>
+        </div>
+    </div>
+}
