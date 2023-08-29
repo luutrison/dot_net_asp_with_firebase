@@ -1,5 +1,7 @@
 ﻿using BAN_BANH.Model;
+using Microsoft.Extensions.Caching.Memory;
 using System;
+using System.Data.SqlClient;
 using System.Text;
 using System.Text.RegularExpressions;
 
@@ -7,7 +9,7 @@ namespace BAN_BANH.Method
 {
     public class MethodOne
     {
-        private readonly string subLinkName = "product";
+        private readonly string subLinkName = "P";
         public string KhongDau(string vanBan)
         {
             try
@@ -74,12 +76,12 @@ namespace BAN_BANH.Method
             return text;
         }
 
-        public string URLSanPham(string Ten, int Id)
+        public string URLSanPham(string Ten, string pid)
         {
             try
             {
                 var title = KhongDau(Ten);
-                return "/" + subLinkName + "/" + title + "-p-" + Id;
+                return "/" + subLinkName + "/" + pid + "/" + title ;
             }
             catch (Exception)
             {
@@ -94,6 +96,77 @@ namespace BAN_BANH.Method
             float avg = totalScore / soSao.Tong;
 
             return Math.Round(avg, 1);
+        }
+
+        public double TimeStamp()
+        {
+            return Math.Round(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
+        }
+
+        public string CheckUserSession(HttpContext context)
+        {
+            var user = context.Session.Get("user").ToString();
+            if (user == null)
+            {
+                var uuid = Guid.NewGuid();
+                var uid = uuid + "-" + TimeStamp();
+                var sessId = "user-" + uid.ToString();
+                user = sessId.ToString();
+                context.Session.SetString("user", sessId);
+            }
+
+            return user;    
+        }
+
+        public void UpdateTimeOutCard(IMemoryCache memoryCache, string connectionString) {
+
+            try
+            {
+                var isUpdate = memoryCache.Get("banhbanh-updateCard");
+                if (isUpdate == null)
+                {
+
+                    int after5h = 5 * 60 * 60;
+
+                    var pd = new ParseDataOne();
+                    var qr = new QueryOne();
+
+                    var timeCheck = TimeStamp() - after5h;
+
+                    using (var conn = new SqlConnection(connectionString))
+                    {
+                        conn.Open();
+                        var queryUserTimeOut = $"use BANBANH_ORDER select * from dbo.UserCard where timestamp <= {timeCheck}";
+                        var sqlCommand = new SqlCommand(queryUserTimeOut, conn);
+                        var reader = sqlCommand.ExecuteReader();
+
+                        var listUser = pd.ParseUserCard(reader);
+                        var cmd = qr.TimeOutOrder(listUser);
+                        reader.Close();
+
+                        var deleteCmd = new SqlCommand(cmd, conn);
+                        var rdl = deleteCmd.ExecuteReader();
+                        rdl.Close();
+                    }
+
+                   
+
+                    MemoryCacheEntryOptions cacheOptions = new MemoryCacheEntryOptions()
+                    {
+                        AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(5),
+                        
+                    };
+                    memoryCache.Set("banhbanh-updateCard", "ok", cacheOptions);
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+            
         }
 
 

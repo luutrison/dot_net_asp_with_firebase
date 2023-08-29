@@ -12,7 +12,7 @@ namespace BAN_BANH.Method
             {
                 var item = new SanPham()
                 {
-                    id = Convert.ToInt32(reader["id"]),
+                    pid = reader["pid"].ToString(),
                     ten = reader["ten"].ToString(),
                     gia = Convert.ToInt32(reader["gia"]),
                     anh = reader["anh"].ToString(),
@@ -20,13 +20,13 @@ namespace BAN_BANH.Method
                     hot = Convert.ToBoolean(reader["hot"]),
                     khadung = Convert.ToBoolean(reader["khadung"]),
                     mota = reader["mota"].ToString(),
-                    ngaytao = Convert.ToDateTime(reader["ngaytao"]),
                     nsx = reader["nsx"].ToString(),
                     tag = reader["tag"].ToString(),
                 };
 
                 list.Add(item);
             }
+            reader.Close();
 
             return list;
 
@@ -39,16 +39,16 @@ namespace BAN_BANH.Method
             {
                 var item = new Comment()
                 {
-                    id = reader["id"].ToString(),
+                    id = reader["pid"].ToString(),
                     BinhLuan = reader["BinhLuan"].ToString(),
                     Rate = Convert.ToInt32(reader["Rate"]),
-                    SanPhamID = Convert.ToInt32(reader["SanPhamID"]),
                     Ten = reader["Ten"].ToString(),
                     Time = Convert.ToInt32(reader["Time"]),
                 };
 
                 list.Add(item);
             }
+            reader.Close();
 
             return list;
 
@@ -71,6 +71,8 @@ namespace BAN_BANH.Method
 
                 obj = item;
             }
+            reader.Close();
+
             return obj;
         }
         public List<ImageGalleryProduct> ParseImageProduct(SqlDataReader reader) {
@@ -89,9 +91,50 @@ namespace BAN_BANH.Method
 
                 listImage.Add(item);
             }
+            reader.Close();
+
             return listImage;
 
         }
-    
+
+        public List<UserCard> ParseUserCard(SqlDataReader reader)
+        {
+            var listUserCard = new List<UserCard>();
+            while (reader.Read())
+            {
+                var item = new UserCard()
+                {
+                    id = reader["id"].ToString(),
+                    timeStamp = Convert.ToInt32(reader["timeStamp"]),
+
+                };
+
+                listUserCard.Add(item);
+            }
+            reader.Close();
+
+            return listUserCard;
+        }
+
+        public List<OrderCard> ParseOrderCard(SqlDataReader reader)
+        {
+            var listOrderCard = new List<OrderCard>();
+            while (reader.Read())
+            {
+                var item = new OrderCard()
+                {
+                    userId = reader["userId"].ToString(),
+                    number = Convert.ToInt32(reader["number"]),
+                    propductId = Convert.ToInt32(reader["propductId"]),
+
+                };
+
+                listOrderCard.Add(item);
+            }
+            reader.Close();
+
+            return listOrderCard;
+        }
+
     }
 }

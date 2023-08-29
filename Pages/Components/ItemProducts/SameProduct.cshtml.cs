@@ -12,7 +12,7 @@ namespace BAN_BANH.Pages.Components.ItemProducts
         public IViewComponentResult  Invoke(SameProduct sameProduct) {
 
             var config = sameProduct.config.GetSection("setting").Get<Setting>();
-            var cns = config.DatabaseConnectionString;
+            var cns = config.dbBanBanh;
 
             var lsSanPham = new List<SanPham>();
 

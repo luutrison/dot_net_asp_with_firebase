@@ -15,15 +15,15 @@ namespace BAN_BANH.Pages.Components.Other
         }
 
 
-        public IViewComponentResult Invoke(int productID)
+        public IViewComponentResult Invoke(string pid)
         {
 
             var st = _configuration.GetSection("setting").Get<Setting>();
-            string query = $"select * from dbo.AnhSanPham where productID = {productID}";
+            string query = $"select * from dbo.AnhSanPham where pid like '{pid}'";
             var pd = new ParseDataOne();
             var listImage = new List<ImageGalleryProduct>();
 
-            using (var conn = new SqlConnection(st.DatabaseConnectionString))
+            using (var conn = new SqlConnection(st.dbBanBanh))
             {
                 conn.Open();
                 var command = new SqlCommand(query, conn);

@@ -18,24 +18,24 @@ namespace BAN_BANH.Pages.Product
         {
 
             var st = _configuration.GetSection("setting").Get<Setting>();
-            var id = RouteData.Values["id"];
+            var pid = RouteData.Values["pid"];
 
             ViewData["config"] = _configuration;
 
             try
             {
-                using (SqlConnection connect = new SqlConnection(st.DatabaseConnectionString))
+                using (SqlConnection connect = new SqlConnection(st.dbBanBanh))
                 {
                     connect.Open();
 
-                    string query = $"select * from dbo.sanpham where id = {id} ";
-                    string queryComment = $"select top 8 * from dbo.sosao where SanPhamID = {id} order by Time desc";
-                    string querySoSao = $"select Count(case when SanPhamID = {id} then 1 end) as 'Tong', " +
-                        $"\r\nCount(case when Rate = 5 and SanPhamID = {id} then 1 end) as 'Sao5', " +
-                        $"\r\nCount(case when Rate = 4 and SanPhamID = {id} then 1 end) as 'Sao4'," +
-                        $"\r\nCount(case when Rate = 3 and SanPhamID = {id} then 1 end) as 'Sao3'," +
-                        $"\r\nCount(case when Rate = 2 and SanPhamID = {id} then 1 end) as 'Sao2'," +
-                        $"\r\nCount(case when Rate = 1 and SanPhamID = {id} then 1 end) as 'Sao1'" +
+                    string query = $"select * from dbo.sanpham where pid like '{pid}' ";
+                    string queryComment = $"select top 8 * from dbo.sosao where pid like '{pid}' order by Time desc";
+                    string querySoSao = $"select Count(case when pid like '{pid}' then 1 end) as 'Tong', " +
+                        $"\r\nCount(case when Rate = 5 and pid like '{pid}' then 1 end) as 'Sao5', " +
+                        $"\r\nCount(case when Rate = 4 and pid like '{pid}' then 1 end) as 'Sao4'," +
+                        $"\r\nCount(case when Rate = 3 and pid like '{pid}' then 1 end) as 'Sao3'," +
+                        $"\r\nCount(case when Rate = 2 and pid like '{pid}' then 1 end) as 'Sao2'," +
+                        $"\r\nCount(case when Rate = 1 and pid like '{pid}' then 1 end) as 'Sao1'" +
                         $"\r\nFrom SoSao";
                     var pdata = new ParseDataOne();
                     var mthod = new MethodOne();

@@ -1,12 +1,12 @@
-﻿@page "{title}-p-{id}";
+﻿@page "/P/{pid}/{title}";
 @using BAN_BANH.Method;
 @using Model;
 @model BAN_BANH.Pages.Product.IndexModel
 @{
-    Layout = "./Layouts/_Layout_Drum";
+    Layout = "/Pages/Shared/Layouts/_Layout_Drum.cshtml";
     SanPham sanpham = (SanPham)ViewData["sanpham"];
     var method = new MethodOne();
-    var url = method.URLSanPham(sanpham.ten, sanpham.id);
+    var url = method.URLSanPham(sanpham.ten, sanpham.pid);
     var calStar = (CalStar)ViewData["star"];
 
     List<Comment> listComment = (List<Comment>)ViewData["comment"];
@@ -36,7 +36,7 @@
         <div class="site-map"><a href="/">Trang chủ</a><a href="/">Sản phẩm</a><a href="@url">@sanpham.ten</a></div>
         <div id="detail-gallary-pr">
             <div class="item">
-                @await Component.InvokeAsync("SwiperProductDetail", sanpham.id)
+                @await Component.InvokeAsync("SwiperProductDetail", sanpham.pid)
             </div>
             <div id="product-detail-a" class="item">
                 <div>
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <form id="form-order-product">
+                <form id="form-order-product" action="/product/order" method="post" enctype="application/x-www-form-urlencoded">
                     <div id="number-order-product">
                         <button class="btn" id="order-minus-btn" type="button">
                             <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
@@ -83,8 +83,8 @@
                             </svg><span>Giảm</span>
                         </button>
                         <div id="numproduct-order">
-                            <img id="decore-iproduct" src="assets/img/design/brush.svg">
-                            <div id="dtail-item-order-input"><input class="form-control" type="number" id="user-detail-input-order" value="1" min="1"><span>Sản phẩm</span><input class="form-control" type="number" id="true-number-order" hidden="" name="number-order" value="1" min="1"></div>
+                            <img id="decore-iproduct" src="~/statics/img/design/brush.svg">
+                            <div id="dtail-item-order-input"><input class="form-control" type="number" id="user-detail-input-order" value="1" min="1"><span>Sản phẩm</span><input class="form-control" type="number" id="true-number-order" hidden="" name="numberOrder" value="1" min="1"></div> <input hidden name=""/>
                         </div><button class="btn" id="order-plus-btn" type="button">
                             <span>Thêm</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
                                 <path d="M10.5858 6.34317L12 4.92896L19.0711 12L12 19.0711L10.5858 17.6569L16.2427 12L10.5858 6.34317Z" fill="currentColor"></path>

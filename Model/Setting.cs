@@ -2,6 +2,7 @@
 {
     public class Setting
     {
-        public string DatabaseConnectionString { get; set; }
+        public string dbBanBanh { get; set; }
+        public string dbBanBanhOrder { get; set; }
     }
 }

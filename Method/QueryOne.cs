@@ -11,7 +11,7 @@ namespace BAN_BANH.Method
             string starCmd = "select top 5 * from sanpham where";
             string cmdCenter = "";
 
-            string endCmd = "order by ngaytao asc";
+            string endCmd = "order by timestamp asc";
 
             
 
@@ -32,5 +32,31 @@ namespace BAN_BANH.Method
 
             return cmd;
         }
+
+        public string TimeOutOrder(List<UserCard> list)
+        {
+            try
+            {
+                var dbName = "BANBANH_ORDER";
+
+                string outTimeCmd = $"use {dbName}";
+
+                foreach (var item in list)
+                {
+                    outTimeCmd += $" delete  from dbo.UserCard where id like '{item.id}' delete  from dbo.OrderCard where userId like '{item.id}'";
+
+                }
+
+                return outTimeCmd;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
     }
+
+
+   
 }

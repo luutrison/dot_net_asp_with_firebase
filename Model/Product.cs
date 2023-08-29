@@ -1,7 +1,10 @@
-﻿namespace BAN_BANH.Model
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace BAN_BANH.Model
 {
     public class SanPham{
-        public int id { get; set; }
+        public string pid { get; set; }
+
         public string? ten { get; set; }
         public int? gia { get; set; }
         public bool? khadung { get; set; }
@@ -11,7 +14,6 @@
         public string? mota { get; set; }
         public string? nsx { get; set; }
         public bool? hot { get; set; }
-        public DateTime? ngaytao { get; set; }
     }
 
     public class Comment
@@ -53,6 +55,12 @@
         public string imageUrl { get; set; }
         public int time { get; set; }
         public int productID { get; set; }
+    }
+
+    public class ProductOrder
+    {
+        [Required(ErrorMessage = "null")]
+        public int numberOrder { get; set; }
     }
 
 }

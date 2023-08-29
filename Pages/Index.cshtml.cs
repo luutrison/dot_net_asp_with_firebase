@@ -24,6 +24,12 @@ namespace BAN_BANH.Pages
         public void OnGet()
         {
 
+            var session = HttpContext.Session;
+            session.SetString("user", "user " + session.Id);
+
+            var id =  session.GetString("user");
+
+
             var st = _configuration.GetSection("setting").Get<Setting>();
             var list = new List<SanPham>();
 
@@ -31,10 +37,10 @@ namespace BAN_BANH.Pages
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(st.DatabaseConnectionString))
+                using (SqlConnection conn = new SqlConnection(st.dbBanBanh))
                 {
                     conn.Open();
-                    string commandtext = "select top 8 * from dbo.SanPham where hot = 1 order by ngaytao desc";
+                    string commandtext = "select top 8 * from dbo.SanPham where hot = 1 order by timestamp asc";
 
                     SqlCommand cmd = new SqlCommand(commandtext, conn);
 
