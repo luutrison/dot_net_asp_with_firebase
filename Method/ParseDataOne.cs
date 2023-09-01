@@ -20,8 +20,8 @@ namespace BAN_BANH.Method
                     hot = Convert.ToBoolean(reader["hot"]),
                     khadung = Convert.ToBoolean(reader["khadung"]),
                     mota = reader["mota"].ToString(),
-                    nsx = reader["nsx"].ToString(),
-                    tag = reader["tag"].ToString(),
+                    //nsx = reader["nsx"].ToString(),
+                    //tag = reader["tag"].ToString(),
                 };
 
                 list.Add(item);
@@ -40,10 +40,11 @@ namespace BAN_BANH.Method
                 var item = new Comment()
                 {
                     id = reader["pid"].ToString(),
-                    BinhLuan = reader["BinhLuan"].ToString(),
-                    Rate = Convert.ToInt32(reader["Rate"]),
-                    Ten = reader["Ten"].ToString(),
-                    Time = Convert.ToInt32(reader["Time"]),
+                    binhLuan = reader["binhLuan"].ToString(),
+                    sao = Convert.ToInt32(reader["sao"]),
+                    ten = reader["ten"].ToString(),
+                    //thoiGian = Convert.ToInt32(reader["Time"]),
+                    msp = reader["msp"].ToString(),
                 };
 
                 list.Add(item);
@@ -83,10 +84,7 @@ namespace BAN_BANH.Method
                 {
                     id = reader["id"].ToString(),
                     imageUrl = reader["imageUrl"].ToString(),
-                    productID = Convert.ToInt32(reader["productID"]),
-                    time = Convert.ToInt32(reader["time"]),
-
-
+                    msp = reader["msp"].ToString(),
                 };
 
                 listImage.Add(item);

@@ -66,50 +66,10 @@
             </a>
         </div>
         <div class="row gx-0 row-cols-3 row-cols-lg-3 row-cols-xxl-4 rliscake m-0">
-            <div class="col col-cake-two">
-                <div class="item-cake-two">
-                    <a href="#">
-                        <div class="image-frame img-ratio-4x3"><img src="~/statics/img/design/Mooncake-Catalogue-2021-North-04-e1627394102990-600x600.jpg"></div>
-                    </a>
-                    <div class="detail-cake">
-                        <a class="name-cake" href="#">TRĂNG VÀNG BLACK N GOLD HỘP 4 BÁNH X160G VÀ TRÀ – 2023</a>
-                        <div class="cake-price"><span class="money">1500000</span><span>đ</span></div><button class="btn btn-order-cake" type="button">Đặt mua</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-cake-two">
-                <div class="item-cake-two">
-                    <a href="#">
-                        <div class="image-frame img-ratio-4x3"><img src="~/statics/img/design/Mooncake-Catalogue-2021-North-05-e1627394043778-600x600.jpg"></div>
-                    </a>
-                    <div class="detail-cake">
-                        <a class="name-cake" href="#">TRĂNG VÀNG BLACK N GOLD HỘP 4 BÁNH X160G VÀ TRÀ – 2023</a>
-                        <div class="cake-price"><span class="money">1500000</span><span>đ</span></div><button class="btn btn-order-cake" type="button">Đặt mua</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-cake-two">
-                <div class="item-cake-two">
-                    <a href="#">
-                        <div class="image-frame img-ratio-4x3"><img src="~/statics/img/design/trangvanghop4-banh-600x600.jpg"></div>
-                    </a>
-                    <div class="detail-cake">
-                        <a class="name-cake" href="#">TRĂNG VÀNG BLACK N GOLD HỘP 4 BÁNH X160G VÀ TRÀ – 2023</a>
-                        <div class="cake-price"><span class="money">1500000</span><span>đ</span></div><button class="btn btn-order-cake" type="button">Đặt mua</button>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-cake-two">
-                <div class="item-cake-two">
-                    <a href="#">
-                        <div class="image-frame img-ratio-4x3"><img src="~/statics/img/design/Mooncake-Catalogue-2021-North-04-e1627394102990-600x600.jpg"></div>
-                    </a>
-                    <div class="detail-cake">
-                        <a class="name-cake" href="#">TRĂNG VÀNG BLACK N GOLD HỘP 4 BÁNH X160G VÀ TRÀ – 2023</a>
-                        <div class="cake-price"><span class="money">1500000</span><span>đ</span></div><button class="btn btn-order-cake" type="button">Đặt mua</button>
-                    </div>
-                </div>
-            </div>
+            @foreach (var item in list)
+            {
+                @await Component.InvokeAsync("ItemProduct", item)
+            }
         </div>
     </div>
 

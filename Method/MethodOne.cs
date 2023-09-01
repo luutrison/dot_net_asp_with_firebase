@@ -1,15 +1,80 @@
 ﻿using BAN_BANH.Model;
+using Google.Cloud.Firestore;
 using Microsoft.Extensions.Caching.Memory;
+using Microsoft.Extensions.Options;
 using System;
 using System.Data.SqlClient;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Text.RegularExpressions;
 
 namespace BAN_BANH.Method
 {
+
+    public static class USE_ENVIROMENT
+    {
+        public static void ENVIROMENT_CODER_I()
+        {
+            Environment.SetEnvironmentVariable(VARIBLE.GOOGLE_APPLICATION_CREDENTIALS, VARIBLE.API_FIRESTORE_CODER_READ);
+        }
+        public static void ENVIROMENT_WRITER_I()
+        {
+            Environment.SetEnvironmentVariable(VARIBLE.GOOGLE_APPLICATION_CREDENTIALS, VARIBLE.API_FIRESTORE_CODER_WRITER);
+        }
+    }
+
+    public class MiddleWare {
+        
+    }
+
+
+    public static class METHOD
+    {
+
+     
+
+        public static void ENDPOINT(IEndpointRouteBuilder endpoint)
+        {
+            endpoint.MapControllerRoute(
+                 name: "api",
+                 pattern: "{controller}/{action}"
+                );
+        }
+
+        public static void SESSION_CONFIG(SessionOptions options)
+        {
+            options.IdleTimeout = TimeSpan.FromHours(10);
+            options.Cookie.IsEssential = true;
+            options.Cookie.Name = "banbanh";
+        }
+
+        public static void ENVIROMENT_WEB(WebApplication app)
+        {
+
+            if (!app.Environment.IsDevelopment())
+            {
+
+                Environment.SetEnvironmentVariable(VARIBLE.CURRENT_ENV, VARIBLE.ENV_PRODUCT);
+
+                app.UseExceptionHandler("/error/fix");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+            else
+            {
+                Environment.SetEnvironmentVariable(VARIBLE.CURRENT_ENV, VARIBLE.ENV_DEV);
+
+            }
+        }
+      
+    }
+
+
+
+
     public class MethodOne
     {
-        private readonly string subLinkName = "P";
+        private readonly string subLinkName = "";
         public string KhongDau(string vanBan)
         {
             try
@@ -36,7 +101,7 @@ namespace BAN_BANH.Method
                     sN = sN.Replace(item, '-');
                 }
                 sN = LooperCheckCase(sN);
-                return (sN.Normalize(NormalizationForm.FormD));
+                return (sN.Normalize(NormalizationForm.FormD).ToLower());
             }
             catch (Exception)
             {
@@ -76,12 +141,12 @@ namespace BAN_BANH.Method
             return text;
         }
 
-        public string URLSanPham(string Ten, string pid)
+        public string URLSanPham(string ten, string msp)
         {
             try
             {
-                var title = KhongDau(Ten);
-                return "/" + subLinkName + "/" + pid + "/" + title ;
+                var title = KhongDau(ten);
+                return "/" + title + "-ms-" + msp;
             }
             catch (Exception)
             {
@@ -93,71 +158,60 @@ namespace BAN_BANH.Method
         {
             float totalScore = 5 * soSao.Sao5 + 4 * soSao.Sao4 + 3 * soSao.Sao3 + 2 * soSao.Sao2 + 1 * soSao.Sao1;
 
-            float avg = totalScore / soSao.Tong;
+            float avg = 0;
+
+            if (totalScore > 0 && soSao.Tong > 0)
+            {
+                avg = totalScore / soSao.Tong;
+            }
 
             return Math.Round(avg, 1);
         }
 
-        public double TimeStamp()
+        public int TimeStamp()
         {
-            return Math.Round(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
+            var currentSecond = Math.Round(DateTime.UtcNow.Subtract(new DateTime(1970, 1, 1)).TotalSeconds);
+            return Convert.ToInt32(currentSecond);
         }
 
-        public string CheckUserSession(HttpContext context)
-        {
-            var user = context.Session.Get("user").ToString();
-            if (user == null)
-            {
-                var uuid = Guid.NewGuid();
-                var uid = uuid + "-" + TimeStamp();
-                var sessId = "user-" + uid.ToString();
-                user = sessId.ToString();
-                context.Session.SetString("user", sessId);
-            }
 
-            return user;    
+        public DateTime DateTimeFromTimeStamp(int timeStamp)
+        {
+
+            var date = new DateTime(1970, 1, 1, 0, 0, 0);
+            date = date.AddSeconds(timeStamp);
+
+            var timezone = TimeZoneInfo.ConvertTimeToUtc(date, TimeZoneInfo.Utc);
+
+            return timezone;
+
         }
 
-        public void UpdateTimeOutCard(IMemoryCache memoryCache, string connectionString) {
-
+        public void LogsError(string error)
+        {
             try
             {
-                var isUpdate = memoryCache.Get("banhbanh-updateCard");
-                if (isUpdate == null)
+
+                var fileSize = new FileInfo(SETTING.ERROR_LOGS_PATH);
+
+                string errorFormat = $"\n\nError At - {DateTime.Now} \n" +
+                    $"-----------------------------------------\n" +
+                    $"{error}";
+
+                if (fileSize.Exists && fileSize.Length < SETTING.MAX_ERROR_LOGS_SIZE)
                 {
 
-                    int after5h = 5 * 60 * 60;
 
-                    var pd = new ParseDataOne();
-                    var qr = new QueryOne();
-
-                    var timeCheck = TimeStamp() - after5h;
-
-                    using (var conn = new SqlConnection(connectionString))
-                    {
-                        conn.Open();
-                        var queryUserTimeOut = $"use BANBANH_ORDER select * from dbo.UserCard where timestamp <= {timeCheck}";
-                        var sqlCommand = new SqlCommand(queryUserTimeOut, conn);
-                        var reader = sqlCommand.ExecuteReader();
-
-                        var listUser = pd.ParseUserCard(reader);
-                        var cmd = qr.TimeOutOrder(listUser);
-                        reader.Close();
-
-                        var deleteCmd = new SqlCommand(cmd, conn);
-                        var rdl = deleteCmd.ExecuteReader();
-                        rdl.Close();
-                    }
-
-                   
-
-                    MemoryCacheEntryOptions cacheOptions = new MemoryCacheEntryOptions()
-                    {
-                        AbsoluteExpirationRelativeToNow = TimeSpan.FromHours(5),
-                        
-                    };
-                    memoryCache.Set("banhbanh-updateCard", "ok", cacheOptions);
+                    File.AppendAllText(Path.GetFullPath(SETTING.ERROR_LOGS_PATH), errorFormat as dynamic);
                 }
+                else
+                {
+                    File.Create(Path.GetFullPath(SETTING.ERROR_LOGS_PATH)).Close();
+                    File.WriteAllText(Path.GetFullPath(SETTING.ERROR_LOGS_PATH), errorFormat as dynamic);
+                }
+
+
+
             }
             catch (Exception)
             {
@@ -165,12 +219,8 @@ namespace BAN_BANH.Method
                 throw;
             }
 
-
-            
         }
 
 
-
-      
     }
 }

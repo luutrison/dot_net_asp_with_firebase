@@ -5,7 +5,8 @@
 
 @{
     var method = new MethodOne();
-    var url = method.URLSanPham(Model.ten, Model.pid);
+    var splink = (SanPhamLink)ViewData["SanPhamLink"];
+    var url = method.URLSanPham(Model.ten, Model.msp);
 }
 
 <div class="col col-cake-two">

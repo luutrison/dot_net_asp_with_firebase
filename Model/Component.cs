@@ -5,12 +5,6 @@
         
     }
 
-    public class SameProduct
-    {
-        public SanPham sanpham { get; set; }
-        public IConfiguration config { get; set; }
-    }
-
     public class UserCard
     {
         public string id { get; set; }

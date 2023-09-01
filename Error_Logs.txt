@@ -1,0 +1,626 @@
+
+
+Error At - 31/08/2023 13:55:23 
+-----------------------------------------
+err
+
+Error At - 31/08/2023 14:45:47 
+-----------------------------------------
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at BAN_BANH.Pages.Product.Pages_Product_Index.ExecuteAsync() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Product\Index.cshtml:line 13
+
+Error At - 31/08/2023 14:47:15 
+-----------------------------------------
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at BAN_BANH.Pages.Product.Pages_Product_Index.ExecuteAsync() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Product\Index.cshtml:line 13
+
+Error At - 31/08/2023 14:49:11 
+-----------------------------------------
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at BAN_BANH.Pages.Product.Pages_Product_Index.ExecuteAsync()
+
+Error At - 31/08/2023 14:49:55 
+-----------------------------------------
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at BAN_BANH.Pages.Product.Pages_Product_Index.ExecuteAsync()
+
+Error At - 31/08/2023 15:51:31 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (Input string was not in a correct format.)
+ ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at BAN_BANH.Method.ParseDataTwo.ParseImageGallery(DocumentSnapshot item)
+   at BAN_BANH.Method.ParseDataTwo.ListImageGallery(Task`1 task)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Pages.Components.Other.SwiperProductDetailViewComponent.<>c__DisplayClass2_0.<Invoke>b__0(ICacheEntry enchy)
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Pages.Components.Other.SwiperProductDetailViewComponent.Invoke(String msp)
+   at lambda_method79(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeSyncCore(ObjectMethodExecutor executor, Object component, ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeCoreAsync(ViewComponentDescriptor descriptor, Object arguments)
+   at BAN_BANH.Pages.Product.Pages_Product_Index.ExecuteAsync()
+
+Error At - 31/08/2023 15:51:47 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (Input string was not in a correct format.)
+ ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at BAN_BANH.Method.ParseDataTwo.ParseImageGallery(DocumentSnapshot item)
+   at BAN_BANH.Method.ParseDataTwo.ListImageGallery(Task`1 task)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Pages.Components.Other.SwiperProductDetailViewComponent.<>c__DisplayClass2_0.<Invoke>b__0(ICacheEntry enchy)
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Pages.Components.Other.SwiperProductDetailViewComponent.Invoke(String msp)
+   at lambda_method79(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeSyncCore(ObjectMethodExecutor executor, Object component, ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeCoreAsync(ViewComponentDescriptor descriptor, Object arguments)
+   at BAN_BANH.Pages.Product.Pages_Product_Index.ExecuteAsync()
+
+Error At - 31/08/2023 15:54:13 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (Input string was not in a correct format.)
+ ---> System.FormatException: Input string was not in a correct format.
+   at System.Number.ThrowOverflowOrFormatException(ParsingStatus status, TypeCode type)
+   at System.String.System.IConvertible.ToInt32(IFormatProvider provider)
+   at System.Convert.ToInt32(Object value)
+   at BAN_BANH.Method.ParseDataTwo.ParseImageGallery(DocumentSnapshot item)
+   at BAN_BANH.Method.ParseDataTwo.ListImageGallery(Task`1 task)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Pages.Components.Other.SwiperProductDetailViewComponent.<>c__DisplayClass2_0.<Invoke>b__0(ICacheEntry enchy)
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Pages.Components.Other.SwiperProductDetailViewComponent.Invoke(String msp)
+   at lambda_method79(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeSyncCore(ObjectMethodExecutor executor, Object component, ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeCoreAsync(ViewComponentDescriptor descriptor, Object arguments)
+   at BAN_BANH.Pages.Product.Pages_Product_Index.ExecuteAsync()
+
+Error At - 31/08/2023 16:19:11 
+-----------------------------------------
+System.Collections.Generic.KeyNotFoundException: The given key 'sukien' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at BAN_BANH.Method.ParseDataTwo.ParseSanPham(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 49
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 82
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 41
+
+Error At - 31/08/2023 16:19:11 
+-----------------------------------------
+System.Collections.Generic.KeyNotFoundException: The given key 'sukien' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at BAN_BANH.Method.ParseDataTwo.ParseSanPham(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 49
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 82
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 41
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 62
+
+Error At - 31/08/2023 18:09:47 
+-----------------------------------------
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'System.Collections.Generic.List<object>' to 'System.Collections.Generic.List<string>'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at BAN_BANH.Method.ParseDataTwo.ParseSanPham(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 72
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 105
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 41
+
+Error At - 31/08/2023 18:09:47 
+-----------------------------------------
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'System.Collections.Generic.List<object>' to 'System.Collections.Generic.List<string>'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at BAN_BANH.Method.ParseDataTwo.ParseSanPham(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 72
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 105
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 41
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 62
+
+Error At - 31/08/2023 18:10:22 
+-----------------------------------------
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'System.Collections.Generic.List<object>' to 'System.Collections.Generic.List<string>'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at BAN_BANH.Method.ParseDataTwo.ParseSanPham(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 72
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 105
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 41
+
+Error At - 31/08/2023 18:10:22 
+-----------------------------------------
+Microsoft.CSharp.RuntimeBinder.RuntimeBinderException: Cannot implicitly convert type 'System.Collections.Generic.List<object>' to 'System.Collections.Generic.List<string>'
+   at CallSite.Target(Closure , CallSite , Object )
+   at System.Dynamic.UpdateDelegates.UpdateAndExecute1[T0,TRet](CallSite site, T0 arg0)
+   at BAN_BANH.Method.ParseDataTwo.ParseSanPham(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 72
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 105
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 41
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 62
+
+Error At - 31/08/2023 18:40:51 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (Status(StatusCode="FailedPrecondition", Detail="The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/coder-5d2de/firestore/indexes?create_composite=Cktwcm9qZWN0cy9jb2Rlci01ZDJkZS9kYXRhYmFzZXMvKGRlZmF1bHQpL2NvbGxlY3Rpb25Hcm91cHMvU0FOUEhBTS9pbmRleGVzL18QARoGCgJjbRgBGhAKDG5nYXlOaGFwTGlldRABGgwKCF9fbmFtZV9fEAE"))
+ ---> Grpc.Core.RpcException: Status(StatusCode="FailedPrecondition", Detail="The query requires an index. You can create it here: https://console.firebase.google.com/v1/r/project/coder-5d2de/firestore/indexes?create_composite=Cktwcm9qZWN0cy9jb2Rlci01ZDJkZS9kYXRhYmFzZXMvKGRlZmF1bHQpL2NvbGxlY3Rpb25Hcm91cHMvU0FOUEhBTS9pbmRleGVzL18QARoGCgJjbRgBGhAKDG5nYXlOaGFwTGlldRABGgwKCF9fbmFtZV9fEAE")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 101
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Pages.Components.ItemProducts.SameProductViewComponent.<>c__DisplayClass2_0.<Invoke>b__0(ICacheEntry entrie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Components\ItemProducts\SameProduct.cshtml.cs:line 35
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Pages.Components.ItemProducts.SameProductViewComponent.Invoke(SameProduct sameProduct) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Components\ItemProducts\SameProduct.cshtml.cs:line 27
+   at lambda_method100(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeSyncCore(ObjectMethodExecutor executor, Object component, ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentInvoker.InvokeAsync(ViewComponentContext context)
+   at Microsoft.AspNetCore.Mvc.ViewComponents.DefaultViewComponentHelper.InvokeCoreAsync(ViewComponentDescriptor descriptor, Object arguments)
+   at BAN_BANH.Pages.Product.Pages_Product_Index.ExecuteAsync() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Product\Index.cshtml:line 130
+
+Error At - 31/08/2023 22:50:35 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 94
+
+Error At - 31/08/2023 22:51:58 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 94
+
+Error At - 31/08/2023 22:55:25 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 94
+
+Error At - 31/08/2023 23:01:47 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 94
+
+Error At - 31/08/2023 23:03:01 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 94
+
+Error At - 31/08/2023 23:06:38 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 95
+
+Error At - 31/08/2023 23:08:24 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 95
+
+Error At - 31/08/2023 23:11:20 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 95
+
+Error At - 31/08/2023 23:18:35 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 100
+
+Error At - 31/08/2023 23:20:42 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 100
+
+Error At - 31/08/2023 23:30:05 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 100
+
+Error At - 31/08/2023 23:49:30 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 98
+
+Error At - 31/08/2023 23:50:44 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 98
+
+Error At - 31/08/2023 23:52:37 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")))
+ ---> System.AggregateException: One or more errors occurred. (Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions."))
+ ---> Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.DeleteTimeOutCard(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 43
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.CHECK.<>c.<CARD>b__2_0(ICacheEntry enchie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 98
+
+Error At - 01/09/2023 00:00:11 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 101
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 45
+
+Error At - 01/09/2023 00:00:11 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 101
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 45
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 66
+
+Error At - 01/09/2023 00:01:49 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 101
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 45
+
+Error At - 01/09/2023 00:01:49 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="PermissionDenied", Detail="Missing or insufficient permissions.")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 101
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 45
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 66
+
+Error At - 01/09/2023 15:37:26 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 101
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 43
+
+Error At - 01/09/2023 15:37:26 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 101
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 43
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 64
+
+Error At - 01/09/2023 16:54:44 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+
+Error At - 01/09/2023 16:54:44 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 66
+
+Error At - 01/09/2023 16:55:17 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+
+Error At - 01/09/2023 16:55:17 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 66
+
+Error At - 01/09/2023 16:55:33 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+
+Error At - 01/09/2023 16:55:33 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 66
+
+Error At - 01/09/2023 16:55:48 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+
+Error At - 01/09/2023 16:55:48 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 66
+
+Error At - 01/09/2023 16:56:37 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+
+Error At - 01/09/2023 16:56:37 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 66
+
+Error At - 01/09/2023 16:57:30 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+
+Error At - 01/09/2023 16:57:30 
+-----------------------------------------
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 39
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 66

@@ -1,62 +1,72 @@
 ﻿using BAN_BANH.Method;
 using BAN_BANH.Model;
+using Google.Cloud.Firestore;
+using Google.Cloud.Firestore.V1;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Caching.Memory;
 using System.Data.SqlClient;
+using System.Reflection;
 
 namespace BAN_BANH.Pages
 {
-
 
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
 
-        private readonly IConfiguration _configuration;
+        private readonly IMemoryCache _memoryCache;
 
-        public IndexModel(ILogger<IndexModel> logger, IConfiguration config)
+        public IndexModel(ILogger<IndexModel> logger, IMemoryCache memoryCache )
         {
             _logger = logger;
-            _configuration = config;
+       
+            _memoryCache = memoryCache;
+
+
         }
 
-
-        public void OnGet()
-        {
-
-            var session = HttpContext.Session;
-            session.SetString("user", "user " + session.Id);
-
-            var id =  session.GetString("user");
-
-
-            var st = _configuration.GetSection("setting").Get<Setting>();
-            var list = new List<SanPham>();
-
-            var pdata = new ParseDataOne();
+        private async Task<List<SanPham>> Data() {
 
             try
             {
-                using (SqlConnection conn = new SqlConnection(st.dbBanBanh))
-                {
-                    conn.Open();
-                    string commandtext = "select top 8 * from dbo.SanPham where hot = 1 order by timestamp asc";
+        
 
-                    SqlCommand cmd = new SqlCommand(commandtext, conn);
+                USE_ENVIROMENT.ENVIROMENT_CODER_I();
+                
 
-                    var reader = cmd.ExecuteReader();
+                var parseTwo = new ParseDataTwo();
+                FirestoreDb db = FirestoreDb.Create(VARIBLE.CODER_I);
 
-                    list = pdata.ListSanPham(reader);
+                var banh = db.Collection(FIREBASE_DB_COLLECTION.BANBANH).Document(FIREBASE_DB_DOCUMENT.CLIENT).Collection(FIREBASE_DB_COLLECTION.SANPHAM);
+                var list = await parseTwo.ListSanPham(banh.GetSnapshotAsync());
 
-                    conn.Close();
 
-                }
+                return list;
+            }
+            catch (Exception err)
+            {
+                new MethodOne().LogsError(err.ToString());
+                throw;
+            }
+           
 
+         
+        }
+
+        public async Task OnGet()
+        {
+           
+            try
+            {
+                new SESSION_COOKIE(HttpContext, _memoryCache);
+                var context = HttpContext;
+                var list = await Data();
                 ViewData["List"] = list;
             }
-            catch (Exception)
+            catch (Exception err)
             {
-
+                new MethodOne().LogsError(err.ToString());
                 throw;
             }
         }

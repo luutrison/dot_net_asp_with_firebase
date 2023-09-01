@@ -7,15 +7,26 @@
     StarCountImage sci = new StarCountImage()
             {
                 mode = "comment",
-                number = Model.Rate
+                number = Model.sao as dynamic
             };
+
+
 }
 
 
 <div class="item-comment-product">
-    <div class="vote-name-and-time"><span class="name-cus-product">@Model.Ten</span><span>@ViewData["date"]</span></div>
+    <div class="vote-name-and-time">
+        <span class="name-cus-product">@Model.ten</span>
+
+        @if (Model.thoiGian != null)
+        {
+            <span>@Model.thoiGian</span>
+
+        }
+
+    </div>
     <div class="comment-n-vote">
         @await Component.InvokeAsync("StarCount", sci)
-        <p>@Model.BinhLuan</p>
+        <p>@Model.binhLuan</p>
     </div>
 </div>

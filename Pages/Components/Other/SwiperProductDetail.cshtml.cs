@@ -1,41 +1,49 @@
 using BAN_BANH.Method;
 using BAN_BANH.Model;
+using Google.Cloud.Firestore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.Extensions.Caching.Memory;
 using System.Data.SqlClient;
 
 namespace BAN_BANH.Pages.Components.Other
 {
     public class SwiperProductDetailViewComponent : ViewComponent
     {
-        private readonly IConfiguration _configuration;
-        public SwiperProductDetailViewComponent(IConfiguration configuration)
+        private readonly IMemoryCache _memoryCache;
+        public SwiperProductDetailViewComponent(IMemoryCache memoryCache)
         {
-            _configuration = configuration;
+            _memoryCache = memoryCache;
         }
 
 
-        public IViewComponentResult Invoke(string pid)
+        public IViewComponentResult Invoke(string msp)
         {
 
-            var st = _configuration.GetSection("setting").Get<Setting>();
-            string query = $"select * from dbo.AnhSanPham where pid like '{pid}'";
-            var pd = new ParseDataOne();
-            var listImage = new List<ImageGalleryProduct>();
-
-            using (var conn = new SqlConnection(st.dbBanBanh))
+            try
             {
-                conn.Open();
-                var command = new SqlCommand(query, conn);
 
-                var reader = command.ExecuteReader();
+                var listImage = _memoryCache.GetOrCreate(CACHEKEY.GALLERY_IMAGE + msp, enchy =>
+                {
+                    USE_ENVIROMENT.ENVIROMENT_CODER_I();
+                    var db = FirestoreDb.Create(VARIBLE.CODER_I);
+                    var collection = new DB_DOCUMENT(db).CLIENT().Collection(FIREBASE_DB_COLLECTION.ANHSANPHAM).WhereEqualTo(FIREBASE_DB_FIELD.MSP, msp).GetSnapshotAsync();
+                    var listImage = new ParseDataTwo().ListImageGallery(collection).Result;
+                    return listImage;
+                });
 
-                listImage = pd.ParseImageProduct(reader);
+                return View("/Pages/Components/Other/SwiperProductDetail.cshtml", listImage);
 
             }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+          
 
 
-            return View("/Pages/Components/Other/SwiperProductDetail.cshtml", listImage);
         }
     }
 }

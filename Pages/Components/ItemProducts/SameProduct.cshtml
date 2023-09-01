@@ -7,7 +7,7 @@
 
 @foreach (var item in Model)
 {
-    var url = meth.URLSanPham(item.ten, item.pid);
+    var url = meth.URLSanPham(item.ten, item.msp);
     <div class="item-same-product">
         <a class="image-same-product" href="@url">
             <div class="image-frame img-ratio-1x1"><img src="@item.anh"></div>

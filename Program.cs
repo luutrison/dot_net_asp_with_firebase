@@ -1,47 +1,39 @@
+using BAN_BANH.Method;
 using BAN_BANH.Model;
+using Google.Cloud.Firestore;
+using Microsoft.AspNetCore.ResponseCompression;
+using Microsoft.Extensions.Caching.Memory;
+
+Environment.SetEnvironmentVariable(VARIBLE.GOOGLE_APPLICATION_CREDENTIALS, VARIBLE.API_FIRESTORE_CODER_WRITER);
+Environment.SetEnvironmentVariable(VARIBLE.DATE_TIME_FORMAT, "dd/MM/yyyy - HH:mm:ss");
+
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 builder.Services.AddRazorPages();
-//builder.Services.AddControllersWithViews();
 
-builder.Services.AddDistributedMemoryCache();
+builder.Services.AddResponseCompression();
 
-builder.Services.AddSession(options =>
-{
-    options.IdleTimeout = TimeSpan.FromHours(10);
-    options.Cookie.IsEssential = true;
-    options.Cookie.Name = "banbanh";
-});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
-if (!app.Environment.IsDevelopment())
-{
-    app.UseExceptionHandler("/Error");
-    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-    app.UseHsts();
-}
 
+
+// Configure the HTTP request pipeline.
+METHOD.ENVIROMENT_WEB(app);
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+
 
 app.UseRouting();
-
 app.UseAuthorization();
-
+app.UseStaticFiles();
 app.MapRazorPages();
-app.UseSession();
+app.UseEndpoints(endpoints => METHOD.ENDPOINT(endpoints));
 
-app.UseEndpoints(endpoints => {
-    endpoints.MapControllerRoute(
-        name: "default",
-        pattern: "{controller}/{action=index}/{title}/v/{id}"
-        );
-});
 
 app.Run();
+
 
 
