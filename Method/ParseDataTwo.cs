@@ -71,26 +71,35 @@ namespace BAN_BANH.Method
 
         private SanPham ParseSanPham(DocumentSnapshot item)
         {
-            var reader = item.ToDictionary();
-            var sanpham = new SanPham()
+            try
             {
-                pid = item.Id,
-                ten = reader["ten"].ToString(),
-                gia = Convert.ToInt32(reader["gia"]),
-                anh = reader["anh"].ToString(),
-                hienthi = Convert.ToBoolean(reader["hienthi"]),
-                hot = Convert.ToBoolean(reader["hot"]),
-                khadung = Convert.ToBoolean(reader["khadung"]),
-                mota = reader["mota"].ToString(),
-                ngaySanXuat = Convert.ToInt32(reader["ngaySanXuat"]),
-                hanSuDung = Convert.ToInt32(reader["hanSuDung"]),
-                ngayNhapLieu = Convert.ToInt32(reader["ngayNhapLieu"]),
-                cm = ToList<string>(reader["cm"] as dynamic),
-                sukien = reader["sukien"].ToString(),
-                msp = reader["msp"].ToString(),
-            };
+                var reader = item.ToDictionary();
+                var sanpham = new SanPham()
+                {
+                    pid = item.Id,
+                    ten = reader["ten"].ToString(),
+                    gia = Convert.ToInt32(reader["gia"]),
+                    anh = reader["anh"].ToString(),
+                    hienthi = Convert.ToBoolean(reader["hienthi"]),
+                    hot = Convert.ToBoolean(reader["hot"]),
+                    khadung = Convert.ToBoolean(reader["khadung"]),
+                    mota = reader["mota"].ToString(),
+                    ngaySanXuat = Convert.ToInt32(reader["ngaySanXuat"]),
+                    hanSuDung = Convert.ToInt32(reader["hanSuDung"]),
+                    ngayNhapLieu = Convert.ToInt32(reader["ngayNhapLieu"]),
+                    cm = ToList<string>(reader["cm"] as dynamic),
+                    sukien = reader["sukien"].ToString(),
+                    msp = reader["msp"].ToString(),
+                };
 
-            return sanpham;
+                return sanpham;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
         }
 
       
@@ -98,18 +107,27 @@ namespace BAN_BANH.Method
 
         public async Task<List<SanPham>> ListSanPham(Task<QuerySnapshot> task)
         {
-            var ls = await task;
-
-            List<SanPham> list = new List<SanPham>();
-
-
-            foreach (var item in ls.Documents)
+            try
             {
-                var itemOut = ParseSanPham(item);
-                list.Add(itemOut);
-            }
+                var ls = await task;
 
-            return list;
+                List<SanPham> list = new List<SanPham>();
+
+
+                foreach (var item in ls.Documents)
+                {
+                    var itemOut = ParseSanPham(item);
+                    list.Add(itemOut);
+                }
+
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
 
         }
 
@@ -121,33 +139,51 @@ namespace BAN_BANH.Method
         // Comment
         private Comment ParseComment(DocumentSnapshot item)
         {
-            var reader = item.ToDictionary();
-            var comment = new Comment()
+            try
             {
-                id = item.Id.ToString(),
-                binhLuan = reader["binhLuan"].ToString(),
-                sao = Convert.ToInt32(reader["sao"]),
-                ten = reader["ten"].ToString(),
-                thoiGian = new ParseTwoMethod().ParseDateTime(item.CreateTime.ToString()),
-                msp = reader["msp"].ToString(),
-            };
-            return comment;
+                var reader = item.ToDictionary();
+                var comment = new Comment()
+                {
+                    id = item.Id.ToString(),
+                    binhLuan = reader["binhLuan"].ToString(),
+                    sao = Convert.ToInt32(reader["sao"]),
+                    ten = reader["ten"].ToString(),
+                    thoiGian = new ParseTwoMethod().ParseDateTime(item.CreateTime.ToString()),
+                    msp = reader["msp"].ToString(),
+                };
+                return comment;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
         }
 
         public async Task<List<Comment>> ListComment(Task<QuerySnapshot> task)
         {
-            var ls = await task;
-
-            List<Comment> list = new List<Comment>();
-
-
-            foreach (var item in ls.Documents)
+            try
             {
-                var itemOut = ParseComment(item);
-                list.Add(itemOut);
-            }
+                var ls = await task;
 
-            return list;
+                List<Comment> list = new List<Comment>();
+
+
+                foreach (var item in ls.Documents)
+                {
+                    var itemOut = ParseComment(item);
+                    list.Add(itemOut);
+                }
+
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        
 
         }
 
@@ -160,31 +196,49 @@ namespace BAN_BANH.Method
 
         private ImageGalleryProduct ParseImageGallery(DocumentSnapshot item)
         {
-            var reader = item.ToDictionary();
-            var outItem = new ImageGalleryProduct()
+            try
             {
-                id = item.Id.ToString(),
-                imageUrl = reader["imageUrl"].ToString(),
-                msp = reader["msp"].ToString(),
-                
+                var reader = item.ToDictionary();
+                var outItem = new ImageGalleryProduct()
+                {
+                    id = item.Id.ToString(),
+                    imageUrl = reader["imageUrl"].ToString(),
+                    msp = reader["msp"].ToString(),
 
-            };
-            return outItem;
+
+                };
+                return outItem;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
         }
         public async Task<List<ImageGalleryProduct>> ListImageGallery(Task<QuerySnapshot> task)
         {
-            var ls = await task;
-
-            List<ImageGalleryProduct> list = new List<ImageGalleryProduct>();
-
-
-            foreach (var item in ls.Documents)
+            try
             {
-                var itemOut = ParseImageGallery(item);
-                list.Add(itemOut);
-            }
+                var ls = await task;
 
-            return list;
+                List<ImageGalleryProduct> list = new List<ImageGalleryProduct>();
+
+
+                foreach (var item in ls.Documents)
+                {
+                    var itemOut = ParseImageGallery(item);
+                    list.Add(itemOut);
+                }
+
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+         
 
         }
 
@@ -195,17 +249,25 @@ namespace BAN_BANH.Method
 
 
         public async Task<SanPhamLink> ListSanPhamLink(Task<DocumentSnapshot> task, int time) {
-
-            var sanphamlink = await task;
-
-            var reader = sanphamlink.ToDictionary();
-            var sanpham = new SanPhamLink()
+            try
             {
-                suKien = reader["tag"].ToString(),
-                timeStamp = time
-            };
+                var sanphamlink = await task;
 
-            return sanpham;
+                var reader = sanphamlink.ToDictionary();
+                var sanpham = new SanPhamLink()
+                {
+                    suKien = reader["tag"].ToString(),
+                    timeStamp = time
+                };
+
+                return sanpham;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
     }
 }

@@ -19,6 +19,8 @@
     <None Include="wwwroot\statics\js\bs-init.js" />
     <None Include="wwwroot\statics\js\color.js" />
     <None Include="wwwroot\statics\js\jquery.min.js" />
+    <None Include="wwwroot\statics\js\lib\Swiper-Image-Lightgallery.js" />
+    <None Include="wwwroot\statics\js\lib\Swiper-Image-Swiper.js" />
   </ItemGroup>
 
   <ItemGroup>
