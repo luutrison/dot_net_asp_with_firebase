@@ -35,10 +35,35 @@
         public static readonly string VIEW_LIMIT_IP_NAME = "IP_";
         public static readonly string COUNT_VIEW_LIMIT_IP_NAME = "COUNT_IP_";
         public static readonly string PATH_RAY_WAIT_PAGE = "/wait/";
+        public static readonly string PATH_RAY_BUSY_PAGE = "/too-busy/";
+        public static readonly string COUNT_LIMIT_IPS = "IPS_";
+        public static readonly string COUNT_MAX_SESSION_NAME = "SESSION_";
+        public static readonly string CATEGORY_HOME = "CATEGORY_HOME";
+
+
 
     }
 
 
+    public static class ENV_KEY
+    {
+        public static readonly string ENV_API_ORDER_DEV = "https://localhost:7152/";
+        public static readonly string ENV_API_ORDER_PRO = "http://ip/order";
+
+    }
+
+    public static class URL
+    {
+        public static readonly string URL_POST_NEW_ORDER = "i/order/order/postorder";
+        public static readonly string URL_GET_ORDER = "i/order/order/getorder";
+
+    }
+
+    public static class REQUEST
+    {
+        public static readonly string GET_ORDER_HEADER_KEY_NAME = "Session-id";
+
+    }
 
 
     public static class  FIREBASE_DB_COLLECTION
@@ -80,8 +105,9 @@
         public static readonly int MAX_ERROR_LOGS_SIZE = 3 * 1024 * 1024;
         public static readonly int DEFAULT_CACHE_TIME_HOUR = 1;
         public static readonly int DEFAULT_CARD_TIME_HOUR = 5;
-        public static readonly int MAX_LOAD_IPS = 5;
-        public static readonly int TIME_RESET_COUNT_LOAD = 1;
+        public static readonly int MAX_LOAD_IPS = 5000;
+        public static readonly int MAX_IPS = 1000;
+        public static readonly int TIME_RESET_COUNT_LOAD = 5;
         public static readonly bool ALLOW_LIMIT_VIEW = true;
 
         public static readonly bool ALLOW_AUTO_CALCULATION_HARDWARE = true;

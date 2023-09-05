@@ -4,7 +4,7 @@
 @{
     Layout = "./Layouts/_Layout_Normal";
     ViewData["Title"] = "Home page";
-    List<SanPham> list = (List<SanPham>)ViewData["List"];
+    var ls = (List<BlockCateOnHomePage>)ViewData[VIEWDATA.HOME_BLOCK];
 }
 
 
@@ -46,32 +46,8 @@
         </div>
     </header>
     <div class="decore-cakestore"><img class="img-decore-2" src="~/statics/img/design/decore.png" anim="bottom-100px-100"><img class="img-decore-1" src="~/statics/img/design/—Pngtree—moon%20mid-autumn%20festival%20tanabata%20fifteen_5778534.png" anim="top-100px-0"></div>
-    <div class="container" id="special-cake">
-        <div class="category-home">
-            <a href="#">
-                <h2>Sản phẩm nổi bật</h2><img src="~/statics/img/design/brush.svg">
-            </a>
-        </div>
-        <div class="row gx-0 row-cols-3 row-cols-lg-3 row-cols-xxl-4 rliscake m-0">
-                @foreach (var item in list)
-                {
-                    @await Component.InvokeAsync("ItemProduct", item)
-                }
-        </div>
-    </div>
-    <div class="container">
-        <div class="category-home">
-            <a href="#">
-                <h2>Hương vị mới</h2><img src="~/statics/img/design/brush.svg">
-            </a>
-        </div>
-        <div class="row gx-0 row-cols-3 row-cols-lg-3 row-cols-xxl-4 rliscake m-0">
-            @foreach (var item in list)
-            {
-                @await Component.InvokeAsync("ItemProduct", item)
-            }
-        </div>
-    </div>
+
+    @await Component.InvokeAsync("BlockHomeItem", ls)
 
     @await Component.InvokeAsync("Footer")
 </div>

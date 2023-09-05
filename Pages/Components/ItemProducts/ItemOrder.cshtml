@@ -1,0 +1,26 @@
+﻿@model BAN_BANH.Model.OrderListGetter
+@{
+}
+
+
+@foreach (var item in Model.pieObject.listOrder)
+{
+    <div>@item.msp</div>
+
+    <div class="item-order-card">
+        <div class="item-detail-order-card">
+            <a class="img-frame-link" href="#">
+                <div class="image-frame img-ratio-4x3"><img src="/statics/img/design/Mooncake-Catalogue-2021-North-04-e1627394102990-600x600.jpg"></div>
+            </a>
+            <div class="dtco">
+                <a class="npdc" href="#">TRĂNG VÀNG BLACK N GOLD HỘP 4 BÁNH X160G VÀ TRÀ – 2023</a>
+                <div class="poc"><span class="money">1300000</span><span>đ</span></div>
+            </div>
+        </div>
+        <div class="numodc">
+            <div class="ico"><span>x</span><input type="number" min="1" value="1"></div><a class="text-end" href="#">Xóa</a>
+        </div>
+    </div>
+}
+
+

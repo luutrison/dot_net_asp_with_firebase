@@ -800,3 +800,259 @@ Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connectin
    at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 101
    at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
    at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 64
+
+Error At - 04/09/2023 15:17:22 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+
+Error At - 04/09/2023 15:17:22 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 64
+
+Error At - 04/09/2023 15:21:12 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+
+Error At - 04/09/2023 15:21:12 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Grpc.Net.Client.Internal.HttpContentClientStreamReader`2.MoveNextCore(CancellationToken cancellationToken)
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 64
+
+Error At - 04/09/2023 15:21:33 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+
+Error At - 04/09/2023 15:21:33 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 64
+
+Error At - 04/09/2023 15:22:13 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+
+Error At - 04/09/2023 15:22:13 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 64
+
+Error At - 04/09/2023 15:22:13 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+
+Error At - 04/09/2023 15:22:13 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 64
+
+Error At - 04/09/2023 15:22:14 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+
+Error At - 04/09/2023 15:22:14 
+-----------------------------------------
+Grpc.Core.RpcException: Status(StatusCode="Unavailable", Detail="Error connecting to subchannel.", DebugException="System.Net.Sockets.SocketException (11001): No such host is known.
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.System.Threading.Tasks.Sources.IValueTaskSource.GetResult(Int16 token)
+   at System.Net.Sockets.Socket.<ConnectAsync>g__WaitForConnectWithCancellation|277_0(AwaitableSocketAsyncEventArgs saea, ValueTask connectTask, CancellationToken cancellationToken)
+   at Grpc.Net.Client.Balancer.Internal.SocketConnectivitySubchannelTransport.TryConnectAsync(ConnectContext context)")
+   at Google.Api.Gax.Grpc.AsyncResponseStream`1.MoveNextAsync(CancellationToken cancellationToken)
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at System.Linq.AsyncEnumerable.<ForEachAsync>g__Core|99_0[TSource](IAsyncEnumerable`1 source, Action`1 action, CancellationToken cancellationToken) in /_/Ix.NET/Source/System.Linq.Async/System/Linq/Operators/ForEach.cs:line 41
+   at Google.Cloud.Firestore.Query.GetSnapshotAsync(ByteString transactionId, CancellationToken cancellationToken)
+   at BAN_BANH.Method.ParseDataTwo.ListSanPham(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 112
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 42
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 64
+
+Error At - 05/09/2023 23:52:27 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (The given key 'showOneHomePage' was not present in the dictionary.)
+ ---> System.Collections.Generic.KeyNotFoundException: The given key 'showOneHomePage' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at BAN_BANH.Method.ParseDataTwo.ParseDanhMuc(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 256
+   at BAN_BANH.Method.ParseDataTwo.ListDanhMuc(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 288
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.PRODUCT.<GetCategoryOfHomePage>b__2_0(ICacheEntry entie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 56
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Method.PRODUCT.GetCategoryOfHomePage() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 51
+   at BAN_BANH.Method.PRODUCT.<BlockCateOnHome>b__3_0(ICacheEntry entrie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 98
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Method.PRODUCT.BlockCateOnHome() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 93
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 36
+
+Error At - 05/09/2023 23:52:27 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (The given key 'showOneHomePage' was not present in the dictionary.)
+ ---> System.Collections.Generic.KeyNotFoundException: The given key 'showOneHomePage' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at BAN_BANH.Method.ParseDataTwo.ParseDanhMuc(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 256
+   at BAN_BANH.Method.ParseDataTwo.ListDanhMuc(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 288
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.PRODUCT.<GetCategoryOfHomePage>b__2_0(ICacheEntry entie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 56
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Method.PRODUCT.GetCategoryOfHomePage() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 51
+   at BAN_BANH.Method.PRODUCT.<BlockCateOnHome>b__3_0(ICacheEntry entrie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 98
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Method.PRODUCT.BlockCateOnHome() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 93
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 36
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 57
+
+Error At - 05/09/2023 23:53:23 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (The given key 'showOneHomePage' was not present in the dictionary.)
+ ---> System.Collections.Generic.KeyNotFoundException: The given key 'showOneHomePage' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at BAN_BANH.Method.ParseDataTwo.ParseDanhMuc(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 256
+   at BAN_BANH.Method.ParseDataTwo.ListDanhMuc(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 288
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.PRODUCT.<GetCategoryOfHomePage>b__2_0(ICacheEntry entie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 56
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Method.PRODUCT.GetCategoryOfHomePage() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 51
+   at BAN_BANH.Method.PRODUCT.<BlockCateOnHome>b__3_0(ICacheEntry entrie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 98
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Method.PRODUCT.BlockCateOnHome() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 93
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 36
+
+Error At - 05/09/2023 23:53:23 
+-----------------------------------------
+System.AggregateException: One or more errors occurred. (The given key 'showOneHomePage' was not present in the dictionary.)
+ ---> System.Collections.Generic.KeyNotFoundException: The given key 'showOneHomePage' was not present in the dictionary.
+   at System.Collections.Generic.Dictionary`2.get_Item(TKey key)
+   at BAN_BANH.Method.ParseDataTwo.ParseDanhMuc(DocumentSnapshot item) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 256
+   at BAN_BANH.Method.ParseDataTwo.ListDanhMuc(Task`1 task) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\ParseDataTwo.cs:line 288
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+   at System.Threading.Tasks.Task`1.GetResultCore(Boolean waitCompletionNotification)
+   at System.Threading.Tasks.Task`1.get_Result()
+   at BAN_BANH.Method.PRODUCT.<GetCategoryOfHomePage>b__2_0(ICacheEntry entie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 56
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Method.PRODUCT.GetCategoryOfHomePage() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 51
+   at BAN_BANH.Method.PRODUCT.<BlockCateOnHome>b__3_0(ICacheEntry entrie) in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 98
+   at Microsoft.Extensions.Caching.Memory.CacheExtensions.GetOrCreate[TItem](IMemoryCache cache, Object key, Func`2 factory)
+   at BAN_BANH.Method.PRODUCT.BlockCateOnHome() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Method\MethodOne.cs:line 93
+   at BAN_BANH.Pages.IndexModel.Data() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 36
+   at BAN_BANH.Pages.IndexModel.OnGet() in C:\Users\gamel\source\repos\BAN-BANH\BAN-BANH\Pages\Index.cshtml.cs:line 57

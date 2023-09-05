@@ -26,33 +26,27 @@ namespace BAN_BANH.Pages
 
         }
 
-        private async Task<List<SanPham>> Data() {
+        private List<BlockCateOnHomePage> Data()
+        {
 
             try
             {
-        
-
                 USE_ENVIROMENT.ENVIROMENT_CODER_I();
-                
 
-                var parseTwo = new ParseDataTwo();
-                FirestoreDb db = FirestoreDb.Create(VARIBLE.CODER_I);
+                var ls = new PRODUCT(_memoryCache).BlockCateOnHome();
 
-                var banh = db.Collection(FIREBASE_DB_COLLECTION.BANBANH).Document(FIREBASE_DB_DOCUMENT.CLIENT).Collection(FIREBASE_DB_COLLECTION.SANPHAM);
-                var list = await parseTwo.ListSanPham(banh.GetSnapshotAsync());
-
-
-                return list;
+                return ls;
             }
             catch (Exception err)
             {
                 new MethodOne().LogsError(err.ToString());
                 throw;
             }
-           
 
-         
+
+
         }
+
 
         public async Task OnGet()
         {
@@ -60,13 +54,12 @@ namespace BAN_BANH.Pages
             try
             {
                 new SESSION_COOKIE(HttpContext, _memoryCache);
-                var context = HttpContext;
-                var list = await Data();
-                ViewData["List"] = list;
+                ViewData[VIEWDATA.HOME_BLOCK] = Data();
             }
             catch (Exception err)
             {
                 new MethodOne().LogsError(err.ToString());
+
                 throw;
             }
         }

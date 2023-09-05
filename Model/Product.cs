@@ -61,6 +61,37 @@ namespace BAN_BANH.Model
 
     }
 
+
+    public class PieObject
+    {
+        public string sessionId { get; set; }
+        public List<SessionOrder> listOrder { get; set; }
+    }
+
+    public class OrderListGetter
+    {
+        public string timestamp { get; set; }
+        public PieObject pieObject { get; set; }
+    }
+
+    public class DanhMuc
+    {
+        public string? Id { get; set; }
+        public bool? isHot { get; set; }
+        public bool? isShow { get; set; }
+        public string? name { get; set; }
+        public int? numberItem { get; set; }
+        public int? orderIndexOnHomePage { get; set; }
+        public bool? showOnHomePage { get; set; }
+        public string? url { get; set; }
+    }
+
+    public class BlockCateOnHomePage
+    {
+        public DanhMuc danhMuc { get; set; }
+        public List<SanPham> sanPham { get; set; }
+    }
+
     public class CalStar
     {
         public float Total { get; set; }
@@ -91,7 +122,7 @@ namespace BAN_BANH.Model
     {
         public string msp { get; set; }
         public int number { get; set; }
-        public string sessionId { get; set; }
+        public string? sessionId { get; set; }
     }
 
     public class NewOrder

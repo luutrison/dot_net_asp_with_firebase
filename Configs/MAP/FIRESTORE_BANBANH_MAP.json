@@ -1,0 +1,115 @@
+{
+  "BANBANH": [
+    {
+      "CLIENT": {
+        "ANHSANPHAM": [
+          {
+            "{id}": {
+              "imageUrl": "{string}",
+              "msp": "{string}"
+            }
+          }
+        ],
+        "DANHMUC": [
+          {
+            "{id}": {
+              "isHot": "{bool}",
+              "isShow": "{bool}",
+              "name": "{string}",
+              "numberItem": "{number}",
+              "orderIndexOnHomePage": "{number}",
+              "showOnHomePage": "{bool}"
+            }
+          }
+        ],
+        "SANPHAM": [
+          {
+            "{id}": {
+              "anh": "{string}",
+              "cm": [
+                { "id": "{string}" }
+              ],
+              "gia": "{number}",
+              "hanSuDung": "{number}",
+              "hienthi": "{bool}",
+              "hot": "{bool}",
+              "khadung": "{bool}",
+              "mota": "{string}",
+              "msp": "{string}",
+              "ngayNhapLieu": "{number}",
+              "ngaySanXuat": "{number}",
+              "sukien": "{string}",
+              "ten": "{string}"
+            }
+          }
+        ],
+        "SOSAO": [
+          {
+            "{id}": {
+              "binhLuan": "{string}",
+              "event": "{string}",
+              "msp": "{string}",
+              "sao": "{number}",
+              "ten": "{string}"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "DASH": {
+        "CATEGORY": [
+          {
+            "{id}": {
+              "footerOrder": "{number}",
+              "headOrder": "{number}",
+              "isFooterItem": "{bool}",
+              "isHeadItem": "{bool}",
+              "isShow": "{bool}",
+              "link": "{string}",
+              "name": "{string}"
+            }
+          }
+        ],
+        "EVENT": [
+          {
+            "{id}": {
+              "name": "{string}",
+              "tag": "{string}"
+            }
+          }
+        ],
+        "LANGUAGE": [
+          {
+            "{id}": {
+              "name": "{string}",
+              "order": "{number}",
+              "table_translate": "{string}"
+            }
+          }
+        ],
+        "PAGE_SETTING": [
+          {
+            "{id}": {
+              "language": "{string}",
+              "timeZone": "{number}",
+              "timeZonePlus": "{bool}"
+            }
+          }
+        ],
+        "TABLE_TRANSLATE": [
+          {
+            "{id}": {
+              "raw_name": "{string}",
+              "translate":  "{string}"
+            }
+          }
+        ]
+      },
+     
+
+    }
+  ]
+
+}
+

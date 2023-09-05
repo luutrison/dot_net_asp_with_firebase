@@ -7,6 +7,7 @@
         public static readonly string CHECK_CARD = "check_card";
         public static readonly string CAKE_LIST_CHECK = "CAKE_LIST_CHECK";
         public static readonly string CAKE_TIME = "CAKE_TIME";
+        public static readonly string CACHE_HOME_SPECIAL_PRODUCT = "CACHE_HOME_SPECIAL_PRODUCT";
 
     }
 
@@ -15,5 +16,8 @@
         public static readonly string SAN_PHAM = "sanpham";
         public static readonly string COMMENT = "comment";
         public static readonly string STAR = "star";
+        public static readonly string ORDER_LIST = "ORDER_LIST";
+        public static readonly string HOME_BLOCK = "HOME_BLOCK";
+
     }
 }

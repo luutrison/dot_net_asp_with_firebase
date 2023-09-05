@@ -10,6 +10,9 @@ using System.Text;
 
 namespace BAN_BANH.Pages.Product
 {
+
+ 
+
     public class OrderModel : PageModel
     {
 
@@ -21,12 +24,26 @@ namespace BAN_BANH.Pages.Product
 
 
 
+
+
+
         public void OnGet()
         {
             try
             {
-                new SESSION_COOKIE(HttpContext, _memoryCache);
+                var SS = new SESSION_COOKIE(HttpContext, _memoryCache);
+                var SSS = SS.GET_SESSION();
 
+                var ohyeah = new HttpClient();
+
+                var url = ENV_VARIBLE.GET_ENV_VARIBLE().URL_ORDER_API + URL.URL_GET_ORDER;
+
+                ohyeah.DefaultRequestHeaders.Add(REQUEST.GET_ORDER_HEADER_KEY_NAME, SSS);
+                var listItem = ohyeah.GetAsync(url).Result;
+
+                var ls = listItem.Content.ReadFromJsonAsync<OrderListGetter>().Result;
+
+                ViewData[VIEWDATA.ORDER_LIST] = ls;
             }
             catch (Exception)
             {
@@ -56,12 +73,15 @@ namespace BAN_BANH.Pages.Product
 
             try
             {
+                var SESS = new SESSION_COOKIE(HttpContext, _memoryCache);
+                SESS.CHECK_SESSION();
 
                 var req = new HttpClient();
                 var context = HttpContext;
-                var sessionId = HttpContext.Session.Id;
 
-                var url_order_api = ENV_VARIBLE.GET_ENV_VARIBLE().URL_ORDER_API;
+                var sessionId =  SESS.GET_SESSION();
+
+                var url_order_api = ENV_VARIBLE.GET_ENV_VARIBLE().URL_ORDER_API + URL.URL_POST_NEW_ORDER;
 
                 var itemOrder = new NewOrder()
                 {
@@ -78,11 +98,9 @@ namespace BAN_BANH.Pages.Product
                     }
                 };
 
-                var examp = "Exu�e����mxlm" as dynamic;
+                var order = JsonConvert.SerializeObject(itemOrder);
 
-                //JsonConvert.SerializeObject(itemOrder)
-
-                var content = new StringContent(examp, Encoding.UTF8, "application/json");
+                var content = new StringContent(order, Encoding.UTF8, "application/json");
 
                 var reqe = req.PostAsync(url_order_api, content).Result;
 

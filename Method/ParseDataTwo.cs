@@ -247,7 +247,61 @@ namespace BAN_BANH.Method
             return ParseImageGallery(await task);
         }
 
+        //DanhMujc
+        private DanhMuc ParseDanhMuc(DocumentSnapshot item)
+        {
+            try
+            {
+                var reader = item.ToDictionary();
+                var outItem = new DanhMuc()
+                {
+                    numberItem = Convert.ToInt32(reader["numberItem"].ToString()),
+                    orderIndexOnHomePage = Convert.ToInt32(reader["orderIndexOnHomePage"].ToString()),
+                    name = reader["name"].ToString(),
 
+                    Id = item.Id.ToString(),
+                    url = reader["url"].ToString(),
+
+                    isHot = Convert.ToBoolean(reader["isHot"].ToString()),
+                    isShow = Convert.ToBoolean(reader["isShow"].ToString()),
+                    showOnHomePage = Convert.ToBoolean(reader["showOnHomePage"].ToString()),
+                };
+                return outItem;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+        public async Task<List<DanhMuc>> ListDanhMuc(Task<QuerySnapshot> task)
+        {
+            try
+            {
+                var ls = await task;
+
+                List<DanhMuc> list = new List<DanhMuc>();
+
+
+                foreach (var item in ls.Documents)
+                {
+                    var itemOut = ParseDanhMuc(item);
+                    list.Add(itemOut);
+                }
+
+                return list;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
+        //Sanpham
         public async Task<SanPhamLink> ListSanPhamLink(Task<DocumentSnapshot> task, int time) {
             try
             {

@@ -23,15 +23,127 @@ namespace BAN_BANH.Method
         }
     }
 
-    public class MiddleWare {
-        
+    public class MiddleWare
+    {
+
     }
+
+    /***
+     * Lấy thông tin về sản phẩm theo mã sản phẩm, nếu sản phẩm đã tồn tại thì
+     * nấy sản phẩm từ cache ra, nếu như chưa có thì nấy về từ database rồi lưu lại vào cache
+     * **/
+
+    public class PRODUCT
+    {
+        private readonly IMemoryCache _memoryCache;
+        public PRODUCT(IMemoryCache memoryCache)
+        {
+            _memoryCache = memoryCache;
+        }
+
+        /***
+         * Nấy sản phẩm theo chuyên mục được liệt kê trong phần client
+         * **/
+        public List<DanhMuc> GetCategoryOfHomePage()
+        {
+            try
+            {
+                var listItem = _memoryCache.GetOrCreate(VARIBLE.CATEGORY_HOME, entie =>
+                {
+                    var db = FirestoreDb.Create(VARIBLE.CODER_I);
+                    var collection = new DB_DOCUMENT(db).CLIENT().Collection(FIREBASE_DB_COLLECTION.DANHMUC).GetSnapshotAsync();
+
+                    var listDanhMuc = new ParseDataTwo().ListDanhMuc(collection).Result;
+
+                    entie.SetValue(listDanhMuc);
+
+                    new CacheExpireNoRuntime(_memoryCache).addCacheItem(new()
+                    {
+                        name = VARIBLE.CATEGORY_HOME,
+                        time = Convert.ToInt32(new MethodOne().TimeStamp() + TimeSpan.FromHours(SETTING.DEFAULT_CACHE_TIME_HOUR).TotalSeconds)
+                    });
+
+                    return listDanhMuc;
+
+                });
+
+                return listItem;
+            }
+            catch (Exception)
+            {
+                //return new List<DanhMuc> { };
+                throw;
+            }
+
+
+        }
+
+        /***
+         * Lọc lại thông tin, nấy ra những danh mục được phép hiển thị, 
+         * các sản phẩm của danh mục đó và số lượng sản phẩm
+         * mỗi chuyên mục
+         * **/
+
+        public List<BlockCateOnHomePage> BlockCateOnHome()
+        {
+
+            try
+            {
+
+                var listBlockCate = _memoryCache.GetOrCreate(CACHEKEY.CACHE_HOME_SPECIAL_PRODUCT, entrie =>
+                {
+
+                    var lsb = new List<BlockCateOnHomePage>();
+
+                    var danhMuc = GetCategoryOfHomePage();
+
+                    var dmsort = danhMuc.Where(x => x.isShow == true).OrderBy(x => x.orderIndexOnHomePage).ToList();
+                    foreach (var item in dmsort)
+                    {
+                        var parseTwo = new ParseDataTwo();
+                        FirestoreDb db = FirestoreDb.Create(VARIBLE.CODER_I);
+
+                        var banh = new DB_DOCUMENT(db).CLIENT().Collection(FIREBASE_DB_COLLECTION.SANPHAM)
+                            .WhereArrayContainsAny(FIREBASE_DB_FIELD.CM, new string[] { item.Id });
+                        var ls = parseTwo.ListSanPham(banh.GetSnapshotAsync()).Result;
+
+
+                        var blockCate = new BlockCateOnHomePage() { danhMuc = item, sanPham = ls };
+                        lsb.Add(blockCate);
+                    }
+
+                    entrie.SetValue(lsb);
+
+                    new CacheExpireNoRuntime(_memoryCache).addCacheItem(new()
+                    {
+                        name = CACHEKEY.CACHE_HOME_SPECIAL_PRODUCT,
+                        time = Convert.ToInt32(new MethodOne().TimeStamp() + TimeSpan.FromHours(SETTING.DEFAULT_CACHE_TIME_HOUR).TotalSeconds)
+                    });
+
+                    return lsb;
+                });
+
+                return listBlockCate;
+
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+
+        }
+
+    }
+
 
 
     public static class METHOD
     {
 
-     
+
 
         public static void ENDPOINT(IEndpointRouteBuilder endpoint)
         {
@@ -66,7 +178,7 @@ namespace BAN_BANH.Method
 
             }
         }
-      
+
     }
 
 

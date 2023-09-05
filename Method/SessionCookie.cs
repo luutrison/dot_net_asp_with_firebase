@@ -3,6 +3,10 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace BAN_BANH.Method
 {
+
+    //Sunwave not like cake
+    //Remember check data carefully
+
     public class SESSION_COOKIE
     {
 
@@ -32,15 +36,27 @@ namespace BAN_BANH.Method
             var newId = VARIBLE.COOKIE_SESSION_NAME_SPLIT + timeStampNow + "." + timeStampOut;
 
 
-            _memoryCache.GetOrCreate(newId, enchie =>
+            var thisSession = _memoryCache.GetOrCreate(newId, enchie =>
             {
                 enchie.SetValue(newId);
-                enchie.SetAbsoluteExpiration(DateTimeOffset.UtcNow.AddHours(SETTING.DEFAULT_CACHE_TIME_HOUR));
+
+                _expireNoRuntime.addCacheItem(new ICacheItemExpire()
+                {
+                    name = newId,
+                    time = getTime()
+                }); ;
+                
                 setCookie(newId);
 
 
                 return newId;
             });
+
+
+            if (true)
+            {
+                
+            }
 
             return newId;
 
@@ -63,6 +79,33 @@ namespace BAN_BANH.Method
                 {
                     Expires = DateTime.UtcNow.AddHours(SETTING.DEFAULT_CARD_TIME_HOUR)
                 });
+        }
+
+        public string GET_SESSION()
+        {
+            try
+            {
+                var cookie = _httpContext.Request.Cookies[VARIBLE.COOKIE_SESSION_NAME];
+                var sessMem = string.Empty;
+
+                if (cookie != null)
+                {
+                    sessMem = _memoryCache.Get(cookie) as dynamic;
+                }
+
+                if (string.IsNullOrEmpty(sessMem))
+                {
+                    sessMem = newSession();
+                }
+
+                return sessMem.ToString();
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+           
         }
 
         public void CHECK_SESSION()
@@ -107,6 +150,8 @@ namespace BAN_BANH.Method
                     var ip = _httpContext.Request.HttpContext.Connection.RemoteIpAddress;
 
                     var nameIp = VARIBLE.VIEW_LIMIT_IP_NAME + ip;
+                    var nameCountIps = VARIBLE.COUNT_LIMIT_IPS;
+
                     var id = _memoryCache.GetOrCreate(nameIp, entrie =>
                     {
                         var uuid = Guid.NewGuid();
@@ -116,8 +161,25 @@ namespace BAN_BANH.Method
                             name = nameIp,
                             time = getTime()
                         });
+
+
+                        var currentCountIp = _memoryCache.GetOrCreate(nameCountIps, entrie =>
+                        {
+                            var count = 0;
+                            entrie.SetValue(count);
+                            _expireNoRuntime.addCacheItem(new()
+                            {
+                                name = nameCountIps,
+                                time = getTime()
+                            }); ;
+                            return count;
+                        });
+
+                        _memoryCache.Set(nameCountIps, ++currentCountIp);
+
                         return uuid;
                     });
+
 
                     var nameCount = VARIBLE.COUNT_VIEW_LIMIT_IP_NAME + ip;
                     var count = _memoryCache.GetOrCreate(nameCount, entrie =>
@@ -131,9 +193,15 @@ namespace BAN_BANH.Method
 
                         return 0;
                     });
+
+                    var countIps = Convert.ToInt32(_memoryCache.Get(nameCountIps));
+
                     if (count > SETTING.MAX_LOAD_IPS)
                     {
                         _httpContext.Response.Redirect(VARIBLE.PATH_RAY_WAIT_PAGE + id.ToString());
+                    }
+                    else if (countIps > SETTING.MAX_IPS) {
+                        _httpContext.Response.Redirect(VARIBLE.PATH_RAY_BUSY_PAGE + id.ToString());
                     }
                     else
                     {
@@ -143,9 +211,9 @@ namespace BAN_BANH.Method
 
                 }
             }
-            catch (Exception)
+            catch (Exception err)
             {
-
+                new MethodOne().LogsError(err.ToString());
                 throw;
             }
 
