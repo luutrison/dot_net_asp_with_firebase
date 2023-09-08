@@ -1,13 +1,14 @@
 ﻿using Google.Cloud.Firestore;
+using Microsoft.AspNetCore.Mvc;
+using Newtonsoft.Json;
 using System.ComponentModel.DataAnnotations;
+using System.Diagnostics.CodeAnalysis;
 
 namespace BAN_BANH.Model
 {
     public class SanPham
     {
         public string? pid { get; set; }
-
-
         public string? ten { get; set; }
         public int? gia { get; set; }
         public bool? khadung { get; set; }
@@ -19,10 +20,57 @@ namespace BAN_BANH.Model
         public int ngayNhapLieu { get; set; }
         public int hanSuDung { get; set; }
         public bool? hot { get; set; }
-
         public string? sukien { get; set; }
         public string? msp { get; set; }
 
+    }
+
+
+    public class OrderLsAdd
+    {
+        [Required(ErrorMessage = "Number is empty")]
+        public int number { get; set; }
+        [Required(ErrorMessage = "MSP is empty")]
+        public string msp { get; set; }
+    }
+
+    public class AddOrder
+    {
+        [Required(ErrorMessage = "Name is empty")]
+        [MinLength(1, ErrorMessage = "MinLength is invalid")]
+        [MaxLength(50, ErrorMessage = "MaxLength is invalid")]
+        public string name { get; set; }
+        [Required(ErrorMessage = "Phonenumber is empty")]
+        [Phone(ErrorMessage = "Phonenumber is invalid")]
+        [MaxLength(20, ErrorMessage = "MaxLength is invalid")]
+        public string phoneNumber { get; set; }
+        [Required(ErrorMessage = "Address is empty")]
+        [MinLength(1, ErrorMessage = "MinLength is invalid")]
+        public string address { get; set; }
+        [Required(ErrorMessage = "Order is empry")]
+        public string order { get; set; }
+        public List<OrderLsAdd>? orderls { get; set; }
+
+        [Required(ErrorMessage = "Human check is invalid")]
+        public string human { get; set; }
+    }
+
+    public class HumanVerify
+    {
+        public bool success { get; set; }
+    }
+
+    public class HumanVerifyForm
+    {
+        public string response { get; set; }
+        public string secret { get; set; }
+    }
+
+
+    public class OrderDelete
+    {
+        public string msp { get; set; }
+        public string sessionId { get; set; }
     }
 
     public class SameProduct
@@ -41,6 +89,24 @@ namespace BAN_BANH.Model
         public string? thoiGian { get; set; }
     }
 
+    public class VTOSTATUS
+    {
+        public int code { get; set; }
+        public string note { get; set; }
+    }
+
+    public class VTO_CHECKED
+    {
+        public bool isGood { get; set; }
+
+        public List<VTOSTATUS> ls { get; set; }
+    }
+
+    public class IResponse
+    {
+        public string? response { get; set; }
+        public VTO_CHECKED? check { get; set; }
+    }
 
 
     public class SoSao
@@ -59,6 +125,12 @@ namespace BAN_BANH.Model
         public float Sao4 { get; set; }
         public float Sao5 { get; set; }
 
+    }
+
+    public class OrderLs
+    {
+        public SessionOrder sOrder { get; set; }
+        public SanPham sSanPham { get; set; }
     }
 
 
@@ -168,6 +240,8 @@ namespace BAN_BANH.Model
         {
             return _db.Collection(FIREBASE_DB_COLLECTION.BB_ORDER_NC).Document(FIREBASE_DB_DOCUMENT.BB_SESSION);
         }
+
+       
     }
 
 }

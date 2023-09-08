@@ -1,0 +1,18 @@
+﻿@using BAN_BANH.Method
+@{
+    var lsi = METHOD.COLORI();
+}
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Coiny&amp;subset=vietnamese&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cuprum:400,400i,500,500i,600,600i,700,700i&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico&amp;display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Patrick+Hand&amp;display=swap">
+
+
+@foreach(var item in lsi)
+{
+    <link rel="stylesheet" href="@item">
+}
+
+
+

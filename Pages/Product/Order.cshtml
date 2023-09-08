@@ -1,13 +1,30 @@
 ﻿@page
 @model BAN_BANH.Pages.Product.OrderModel
-@using Model 
+@using Model
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
 @{
     Layout = "/Pages/Shared/Layouts/_Layout_Drum.cshtml";
 
-    var orderList = (OrderListGetter)ViewData[VIEWDATA.ORDER_LIST];
+    var orderList = (List<OrderLs>)ViewData[VIEWDATA.ORDER_LIST];
+
+    var uer = VARIBLE.HUMAN_WEB_CLIENT_CODER;
+}
+
+@section colori{
+    <style>
+        #form-order-with-capt, #form-order-with-capt iframe {
+            width: 100% !important
+        }
+
+
+        .human-web-order {
+            min-height: 80px;
+            margin-top: 30px;
+        }
+
+    </style>
 }
 
 
@@ -15,26 +32,57 @@
     <div class="container" id="ct-order-infomation">
         <div id="col-detail-card" class="item">
             <h4>Thông tin đặt hàng</h4>
-            <div class="order-infomation-card">
-                <div><span>Họ và tên</span><span class="red">&nbsp;(*)</span></div><input type="text" inputmode="tel">
-            </div>
-            <div class="order-infomation-card">
-                <div><span>Số điện thoại</span><span class="red">&nbsp;(*)</span></div><input type="text" inputmode="tel">
-            </div>
-            <div class="order-infomation-card">
-                <div><span>Địa chỉ nhận hàng</span><span class="red">&nbsp;(*)</span></div><input type="text" inputmode="tel">
-            </div><button class="btn" id="button-order-card" type="button">Đặt hàng</button>
+            <form method="post" id="form-order-with-capt" action="/product/addOrder" enctype="application/x-www-form-urlencoded">
+                <div class="order-infomation-card">
+                    <div><span>Họ và tên</span><span class="red">&nbsp;(*)</span></div><input type="text" name="name" minlength="6" maxlength="50" required >
+                </div>
+                <div class="order-infomation-card">
+                    <div><span>Số điện thoại</span><span class="red">&nbsp;(*)</span></div><input type="tel" inputmode="tel" name="phoneNumber" minlength="6" required>
+                </div>
+                <div class="order-infomation-card">
+                    <div><span>Địa chỉ nhận hàng</span><span class="red">&nbsp;(*)</span></div><input type="text" name="address" minlength="6" required>
+                </div>
+                <div class="human-web-order"></div>
+                <input hidden name="order" id="order-list-user" value="" />
+                <input hidden name="human" id="ishuman-order"/>
+                <button class="btn" id="button-order-card" type="submit">Đặt hàng</button>
+            </form>
+
         </div>
+
+
         <div id="info-card-order" class="item">
-            <div class="lcoc">
-                
-                @await Component.InvokeAsync("ItemOrder", orderList)
-               
-            </div>
-            <div class="tco">
-                <span id="ttnc">Tổng cộng</span>
-                <div id="priceco"><span class="money">2600000</span><span>đ</span></div>
-            </div>
+
+            @await Component.InvokeAsync("ItemOrder", orderList)
+
+
+
         </div>
     </div>
 </div>
+
+
+@section colorii{
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?onload=onloadTurnstileCallback" defer></script>
+
+    <script>
+        window.onloadTurnstileCallback = function () {
+            turnstile.render('#col-detail-card .human-web-order', {
+                sitekey: '@uer',
+                callback: function (token) {
+                    document.getElementById("ishuman-order").value = token;
+                },
+            });
+        };
+
+
+        $(document).ready(() => {
+
+        })
+
+    </script>
+
+    <script>
+
+    </script>
+} 

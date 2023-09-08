@@ -22,9 +22,9 @@
                 };
 
 
-
     @section colori{
-    <link rel="stylesheet" href="~/statics/css/Swiper-Image.css">
+    <link rel="stylesheet" href="@METHOD.URI_STATIC("/css/Swiper-Image.css")">
+
 }
 
     <div>@sanpham.ten</div>
@@ -82,7 +82,7 @@
                                 </svg><span>Giảm</span>
                             </button>
                             <div id="numproduct-order">
-                                <img id="decore-iproduct" src="~/statics/img/design/brush.svg">
+                                <img id="decore-iproduct" src="@METHOD.URI_STATIC("/img/design/brush.svg")">
                                 <div id="dtail-item-order-input"><input class="form-control" type="number" id="user-detail-input-order" value="1" min="1"><span>Sản phẩm</span><input class="form-control" type="number" id="true-number-order" hidden="" name="numberOrder" value="1" min="1"></div> <input hidden name="msp" value="@sanpham.msp" />
                             </div><button class="btn" id="order-plus-btn" type="button">
                                 <span>Thêm</span><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" fill="none">
@@ -137,8 +137,8 @@
     </div>
 
     @section colorii{
-    <script src="~/statics/js/lib/Swiper-Image-Lightgallery.js"></script>
-    <script src="~/statics/js/lib/Swiper-Image-Swiper.js"></script>
+    <script src="@METHOD.URI_STATIC("/js/lib/Swiper-Image-Lightgallery.js")"></script>
+    <script src="@METHOD.URI_STATIC("js/lib/Swiper-Image-Swiper.js")"></script>
 }
 }
 catch (Exception err)

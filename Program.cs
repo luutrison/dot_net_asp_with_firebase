@@ -15,24 +15,15 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 
 builder.Services.AddResponseCompression();
-
-
 var app = builder.Build();
-
-
 
 // Configure the HTTP request pipeline.
 METHOD.ENVIROMENT_WEB(app);
+
 app.UseHttpsRedirection();
-
-
 app.UseRouting();
-app.UseAuthorization();
-app.UseStaticFiles();
 app.MapRazorPages();
 app.UseEndpoints(endpoints => METHOD.ENDPOINT(endpoints));
-
-
 app.Run();
 
 

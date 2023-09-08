@@ -5,17 +5,20 @@ namespace BAN_BANH.Model.env
     public abstract class ENV_ONE
     {
         public abstract string URL_ORDER_API { get; }
+        public abstract string URL_STATIC_FILES { get; }
     }
 
 
     public  class ENV_DEV : ENV_ONE
     {
         public override string URL_ORDER_API { get => ENV_KEY.ENV_API_ORDER_DEV; }
+        public override string URL_STATIC_FILES { get => ENV_KEY.ENV_STATIC_DEV; }
     }
 
     public class ENV_PRODUCT : ENV_ONE
     {
         public override string URL_ORDER_API { get => ENV_KEY.ENV_API_ORDER_PRO;  }
+        public override string URL_STATIC_FILES { get => ENV_KEY.ENV_STATIC_PRO; }
     }
 
 

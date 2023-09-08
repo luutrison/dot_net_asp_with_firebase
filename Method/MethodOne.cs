@@ -1,5 +1,7 @@
 ﻿using BAN_BANH.Model;
+using BAN_BANH.Model.env;
 using Google.Cloud.Firestore;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
 using Microsoft.Extensions.Options;
 using System;
@@ -23,10 +25,7 @@ namespace BAN_BANH.Method
         }
     }
 
-    public class MiddleWare
-    {
 
-    }
 
     /***
      * Lấy thông tin về sản phẩm theo mã sản phẩm, nếu sản phẩm đã tồn tại thì
@@ -78,6 +77,94 @@ namespace BAN_BANH.Method
 
         }
 
+
+        /***
+         * Tạo Danh sách sản phẩm mà người dùng đặt hàng
+         * **/
+
+        private SanPham SortSanPham(SessionOrder order, List<BlockCateOnHomePage> bl)
+        {
+            var spOut = new SanPham();
+            foreach(var item in bl)
+            {
+                var sp = item.sanPham.Where(x => x.msp == order.msp).FirstOrDefault();
+                if (sp != null) {
+                    spOut = sp;
+                }
+                else
+                {
+                    /***
+                     * Lấy thông tin sản phẩm từ database, nếu có thì add lại vào một list khác
+                     * **/
+
+                    FirestoreDb db = FirestoreDb.Create(VARIBLE.CODER_I);
+
+                    var banh = new DB_DOCUMENT(db).CLIENT().Collection(FIREBASE_DB_COLLECTION.SANPHAM)
+                        .WhereEqualTo(FIREBASE_DB_FIELD.MSP, order.msp);
+                    var parseTwo = new ParseDataTwo();
+                    var itb = parseTwo.ListSanPham(banh.GetSnapshotAsync()).Result;
+                    if (itb.FirstOrDefault() != null) { 
+                    
+                        spOut = itb.FirstOrDefault();
+                        var isp = bl.Where(x => spOut.cm.Contains(x.danhMuc.Id)).FirstOrDefault();
+
+                        var msp = isp.sanPham.Where(x => x.msp == spOut.msp).FirstOrDefault();
+
+                        if (msp == null)
+                        {
+                            isp.sanPham.Add(spOut);
+                            _memoryCache.Set(CACHEKEY.CACHE_HOME_SPECIAL_PRODUCT, bl);
+                        }
+                    }
+                }
+            }
+
+            return spOut;
+        }
+
+        public List<OrderLs> ListOrder(OrderListGetter ls)
+        {
+            try
+            {
+                var lsp = new PRODUCT(_memoryCache).BlockCateOnHome();
+
+                var lso = new List<OrderLs>();
+
+
+                foreach (var item in ls.pieObject.listOrder)
+                {
+                    var sap = SortSanPham(item, lsp);
+
+
+
+                    if (sap != null)
+                    {
+                        var orl = new OrderLs()
+                        {
+                            sOrder = item,
+                            sSanPham = sap
+                        };
+
+                        lso.Add(orl);
+                    }
+                    else
+                    {
+                        //Dữ liệu bị lệch
+                    }
+                }
+
+                return lso;
+            }
+            catch (Exception)
+            {
+                return new List<OrderLs>();
+            }
+
+
+            
+        }
+
+
         /***
          * Lọc lại thông tin, nấy ra những danh mục được phép hiển thị, 
          * các sản phẩm của danh mục đó và số lượng sản phẩm
@@ -104,7 +191,7 @@ namespace BAN_BANH.Method
                         FirestoreDb db = FirestoreDb.Create(VARIBLE.CODER_I);
 
                         var banh = new DB_DOCUMENT(db).CLIENT().Collection(FIREBASE_DB_COLLECTION.SANPHAM)
-                            .WhereArrayContainsAny(FIREBASE_DB_FIELD.CM, new string[] { item.Id });
+                            .WhereArrayContainsAny(FIREBASE_DB_FIELD.CM, new string[] { item.Id }).Limit(item.numberItem.Value | 0);
                         var ls = parseTwo.ListSanPham(banh.GetSnapshotAsync()).Result;
 
 
@@ -143,14 +230,41 @@ namespace BAN_BANH.Method
     public static class METHOD
     {
 
-
-
         public static void ENDPOINT(IEndpointRouteBuilder endpoint)
         {
             endpoint.MapControllerRoute(
                  name: "api",
                  pattern: "{controller}/{action}"
                 );
+        }
+
+        public static List<string> COLORI()
+        {
+            var ls = VARIBLE.LIST_COLOR_I;
+            var lsi = new List<string>();
+            foreach (var item in ls)
+            {
+                lsi.Add(ENV_VARIBLE.GET_ENV_VARIBLE().URL_STATIC_FILES + item);
+            }
+
+            return lsi;
+        }
+
+        public static List<string> COLORII()
+        {
+            var ls = VARIBLE.LIST_COLOR_II;
+            var lsi = new List<string>();
+            foreach (var item in ls)
+            {
+                lsi.Add(ENV_VARIBLE.GET_ENV_VARIBLE().URL_STATIC_FILES + item);
+            }
+
+            return lsi;
+        }
+
+        public static string URI_STATIC(string uri)
+        {
+            return ENV_VARIBLE.GET_ENV_VARIBLE().URL_STATIC_FILES + uri;
         }
 
         public static void SESSION_CONFIG(SessionOptions options)
@@ -175,7 +289,7 @@ namespace BAN_BANH.Method
             else
             {
                 Environment.SetEnvironmentVariable(VARIBLE.CURRENT_ENV, VARIBLE.ENV_DEV);
-
+                app.UseExceptionHandler("/error/fix");
             }
         }
 

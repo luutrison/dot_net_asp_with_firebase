@@ -11,6 +11,11 @@ using System.Reflection;
 namespace BAN_BANH.Pages
 {
 
+    public class Decoration
+    {
+        public int MyProperty { get; set; }
+    }
+
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
@@ -42,8 +47,6 @@ namespace BAN_BANH.Pages
                 new MethodOne().LogsError(err.ToString());
                 throw;
             }
-
-
 
         }
 

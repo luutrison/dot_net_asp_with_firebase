@@ -1,4 +1,5 @@
 ﻿@page
+@using BAN_BANH.Method;
 @using BAN_BANH.Model;
 @model IndexModel
 @{
@@ -11,8 +12,8 @@
 <div class="intro-cake">
     <div class="bg-introimg"><img class="background-intro" src="https://i.ibb.co/XtPrbT9/fresh-wheat-floor-spilled-black-surface-top-view.jpg"></div>
     <div class="container">
-        <img class="tada animated movition-img" src="~/statics/img/design/Trung_thu_Com_dua_hat_de_db_230gr.png">
-        <div class="right-intro"><img class="pulse animated" src="~/statics/img/design/Trung%20thu%20đến%20gần.png" style="min-width: 425px;max-width: 40vw;"><img data-aos="fade-left" data-aos-delay="500" src="~/statics/img/design/Rộn%20ràng%20yêu%20thương.png" style="min-width: 300px;"><a data-aos="fade" data-aos-delay="600" class="buy-btn-intro" href="#" style="min-width: 400px;"><img src="~/statics/img/design/buy-button.png"></a></div>
+        <img class="tada animated movition-img" src="@METHOD.URI_STATIC("/img/design/intro-1.png")">
+        <div class="right-intro"><img class="pulse animated" src="@METHOD.URI_STATIC("/img/design/text-2.png")" style="min-width: 425px;max-width: 40vw;"><img data-aos="fade-left" data-aos-delay="500" src="@METHOD.URI_STATIC("/img/design/text-1.png")" style="min-width: 300px;"><a data-aos="fade" data-aos-delay="600" class="buy-btn-intro" href="#" style="min-width: 400px;"><img src="@METHOD.URI_STATIC("/img/design/buy-button.png")"></a></div>
     </div>
 </div>
 <div class="hot-cake">
@@ -45,7 +46,7 @@
             </div>
         </div>
     </header>
-    <div class="decore-cakestore"><img class="img-decore-2" src="~/statics/img/design/decore.png" anim="bottom-100px-100"><img class="img-decore-1" src="~/statics/img/design/—Pngtree—moon%20mid-autumn%20festival%20tanabata%20fifteen_5778534.png" anim="top-100px-0"></div>
+    <div class="decore-cakestore"><img class="img-decore-2" src="@METHOD.URI_STATIC("/img/design/decore.png")" anim="bottom-100px-100"><img class="img-decore-1" src="@METHOD.URI_STATIC("/img/design/decore-1.png")" anim="top-100px-0"></div>
 
     @await Component.InvokeAsync("BlockHomeItem", ls)
 

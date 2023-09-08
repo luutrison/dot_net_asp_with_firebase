@@ -39,16 +39,48 @@
         public static readonly string COUNT_LIMIT_IPS = "IPS_";
         public static readonly string COUNT_MAX_SESSION_NAME = "SESSION_";
         public static readonly string CATEGORY_HOME = "CATEGORY_HOME";
+        public static readonly string BAD_GUY_ZONE = "/a-zone-for-bad-guy";
+        public static readonly string HI_HIGHT = "HI-HIGHT-HIDE";
+        public static readonly string REALY_HI = "22-2-222-22222222-2-222-2222";
+        public static readonly string HUMAN_WEB_SEVER_CODER = "0x4AAAAAAAJ2Gu3M5nJ0e82GeQLL1q85-Dg";
+        public static readonly string HUMAN_WEB_CLIENT_CODER = "0x4AAAAAAAJ2GjePJjnFpWVv";
+        public static readonly string COMP_COLORI = "ColorI";
+        public static readonly string SECT_COLORI = "colori";
+        public static readonly string NAME_HEADER = "Header";
+        public static readonly string NAME_HEADER_DRUM = "drum";
+        public static readonly string COMP_FOOTER = "Footer";
+        public static readonly string COMP_COLOR_II = "ColorII";
+        public static readonly string SECT_COLORII = "colorii";
+        public static readonly string HUMAN_VALIDATE_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
+        public static readonly string NAME_SECRET = "secret";
+        public static readonly string NAME_RESPONSE = "response";
 
 
-
+        public static readonly List<string> LIST_COLOR_I = new List<string>()
+        {
+            "/bootstrap/css/bootstrap.min.css",
+            "/css/aos.min.css",
+            "/css/animate.min.css",
+            "/css/color.css",
+            "/css/Swiper-Image.css",
+        };
+        public static readonly List<string> LIST_COLOR_II = new List<string>()
+        {
+            "/js/jquery.min.js",
+            "/bootstrap/js/bootstrap.min.js",
+            "/js/aos.min.js",
+            "/js/bs-init.js",
+            "/js/color.js",
+        };
     }
 
 
     public static class ENV_KEY
     {
         public static readonly string ENV_API_ORDER_DEV = "https://localhost:7152/";
-        public static readonly string ENV_API_ORDER_PRO = "http://ip/order";
+        public static readonly string ENV_API_ORDER_PRO = "http://www.content-file-banbanh.somee.com/";
+        public static readonly string ENV_STATIC_DEV = "http://localhost:4320/1694105503/";
+        public static readonly string ENV_STATIC_PRO = "http://www.content-file-banbanh.somee.com/";
 
     }
 
@@ -56,6 +88,8 @@
     {
         public static readonly string URL_POST_NEW_ORDER = "i/order/order/postorder";
         public static readonly string URL_GET_ORDER = "i/order/order/getorder";
+        public static readonly string URL_DELETE_ORDER = "i/order/order/deleteorder";
+        public static readonly string URL_ADD_ORDER = "i/order/order/addOrder";
 
     }
 

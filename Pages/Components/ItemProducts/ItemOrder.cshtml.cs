@@ -11,7 +11,7 @@ namespace BAN_BANH.Pages.Components.ItemProducts
         {
         }
 
-        public IViewComponentResult Invoke(OrderListGetter orderList)
+        public IViewComponentResult Invoke(List<OrderLs> orderList)
         {
 
 

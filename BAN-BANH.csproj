@@ -13,17 +13,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="wwwroot\statics\bootstrap\js\bootstrap.min.js" />
-    <None Include="wwwroot\statics\img\design\brush.svg" />
-    <None Include="wwwroot\statics\js\aos.min.js" />
-    <None Include="wwwroot\statics\js\bs-init.js" />
-    <None Include="wwwroot\statics\js\color.js" />
-    <None Include="wwwroot\statics\js\jquery.min.js" />
-    <None Include="wwwroot\statics\js\lib\Swiper-Image-Lightgallery.js" />
-    <None Include="wwwroot\statics\js\lib\Swiper-Image-Swiper.js" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Google.Cloud.Firestore" Version="3.3.0" />
     <PackageReference Include="System.Data.SqlClient" Version="4.8.5" />
   </ItemGroup>
