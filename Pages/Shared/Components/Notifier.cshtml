@@ -1,0 +1,24 @@
+﻿@using BAN_BANH.Method;
+@using BAN_BANH.Model;
+@using Microsoft.Extensions.Caching.Memory;
+@using Newtonsoft.Json;
+@model MemoryCache;
+
+@{
+    var notify = string.Empty;
+
+    var noti = new NOTIFIER(Model, this.Context);
+
+    var currentNotify = noti.GETNOTIFY();
+
+    if (currentNotify != null)
+    {
+        notify = JsonConvert.SerializeObject(currentNotify);
+    }
+
+}
+
+
+
+<div id="notifier" content="@notify"></div>
+

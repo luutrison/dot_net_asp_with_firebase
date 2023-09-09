@@ -1,3 +1,4 @@
+using BAN_BANH.BAG.MOE;
 using BAN_BANH.Method;
 using BAN_BANH.Model;
 using Google.Cloud.Firestore;
@@ -7,12 +8,12 @@ using Microsoft.Extensions.Caching.Memory;
 
 namespace BAN_BANH.Pages.Product
 {
-    public class IndexModel : PageModel
+    public class IndexController : IMOE
     {
         private readonly IConfiguration _configuration;
         private readonly IMemoryCache _memoryCache;
 
-        public IndexModel(IConfiguration configuration, IMemoryCache memoryCache)
+        public IndexController(IConfiguration configuration, IMemoryCache memoryCache)
         {
             _configuration = configuration;
             _memoryCache = memoryCache;
@@ -60,10 +61,9 @@ namespace BAN_BANH.Pages.Product
       
         }
 
-
+        [HttpGet("/{title}-ms-{msp}")]
         public async Task<IActionResult> OnGet()
         {
-
 
             try
             {
@@ -125,7 +125,7 @@ namespace BAN_BANH.Pages.Product
                     ViewData[VIEWDATA.SAN_PHAM] = sanpham;
                     ViewData[VIEWDATA.COMMENT] = comment;
                     ViewData[VIEWDATA.STAR] = star;
-                    return new PageResult();
+                    return View("/Pages/Product/Index.cshtml");
                 }
 
                 

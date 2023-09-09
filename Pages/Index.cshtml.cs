@@ -1,4 +1,5 @@
-﻿using BAN_BANH.Method;
+﻿using BAN_BANH.BAG.MOE;
+using BAN_BANH.Method;
 using BAN_BANH.Model;
 using Google.Cloud.Firestore;
 using Google.Cloud.Firestore.V1;
@@ -11,24 +12,14 @@ using System.Reflection;
 namespace BAN_BANH.Pages
 {
 
-    public class Decoration
+
+    public class IndexController : IMOE
     {
-        public int MyProperty { get; set; }
-    }
 
-    public class IndexModel : PageModel
-    {
-        private readonly ILogger<IndexModel> _logger;
 
-        private readonly IMemoryCache _memoryCache;
-
-        public IndexModel(ILogger<IndexModel> logger, IMemoryCache memoryCache )
+        public IndexController( IMemoryCache memoryCache )
         {
-            _logger = logger;
-       
-            _memoryCache = memoryCache;
-
-
+            this._memoryCache = memoryCache;
         }
 
         private List<BlockCateOnHomePage> Data()
@@ -50,14 +41,19 @@ namespace BAN_BANH.Pages
 
         }
 
-
-        public async Task OnGet()
+        [HttpGet("/")]
+        public IActionResult OnGet()
         {
            
             try
             {
-                new SESSION_COOKIE(HttpContext, _memoryCache);
-                ViewData[VIEWDATA.HOME_BLOCK] = Data();
+                this._httpContext = HttpContext;
+                return CHECK.OK(this).THEN(props =>
+                {
+                    ViewData[VIEWDATA.HOME_BLOCK] = Data();
+
+                    return View("/Pages/Index.cshtml");
+                });
             }
             catch (Exception err)
             {

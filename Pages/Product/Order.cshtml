@@ -1,6 +1,5 @@
-﻿@page
+﻿@using BAN_BANH.Model;
 @model BAN_BANH.Pages.Product.OrderModel
-@using Model
 @*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
@@ -32,7 +31,7 @@
     <div class="container" id="ct-order-infomation">
         <div id="col-detail-card" class="item">
             <h4>Thông tin đặt hàng</h4>
-            <form method="post" id="form-order-with-capt" action="/product/addOrder" enctype="application/x-www-form-urlencoded">
+            <form method="post" id="form-order-with-capt" action="/product/order-add" enctype="application/x-www-form-urlencoded">
                 <div class="order-infomation-card">
                     <div><span>Họ và tên</span><span class="red">&nbsp;(*)</span></div><input type="text" name="name" minlength="6" maxlength="50" required >
                 </div>

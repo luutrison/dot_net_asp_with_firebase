@@ -1,4 +1,5 @@
-﻿@model List<BAN_BANH.Model.OrderLs>
+﻿@using BAN_BANH.Method
+@model List<BAN_BANH.Model.OrderLs>
 @{
     var total = 0;
 }
@@ -9,7 +10,7 @@
     @foreach (var item in Model)
     {
         total += item.sSanPham.gia.Value * item.sOrder.number;
-        var url = new Method.MethodOne().URLSanPham(item.sSanPham.ten, item.sSanPham.msp);
+        var url = new MethodOne().URLSanPham(item.sSanPham.ten, item.sSanPham.msp);
 
         <div class="item-order-card" msp="@item.sSanPham.msp">
             <div class="item-detail-order-card">
@@ -22,7 +23,7 @@
                 </div>
             </div>
             <div class="numodc">
-                <div class="ico"><span>x</span><input type="number" min="1" value="@item.sOrder.number"></div><a class="text-end" href="/product/deleteOrder?msp=@item.sSanPham.msp">Xóa</a>
+                <div class="ico"><span>x</span><input type="number" min="1" value="@item.sOrder.number"></div><a class="text-end" href="/product/delete?msp=@item.sSanPham.msp">Xóa</a>
             </div>
         </div>
     }

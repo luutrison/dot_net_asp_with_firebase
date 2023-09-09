@@ -1,5 +1,6 @@
 ﻿using BAN_BANH.Model;
 using BAN_BANH.Model.env;
+using BAN_BANH.Pages.Product;
 using Google.Cloud.Firestore;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Caching.Memory;
@@ -12,6 +13,81 @@ using System.Text.RegularExpressions;
 
 namespace BAN_BANH.Method
 {
+    
+
+    public class NOTIFIER
+    {
+
+        private readonly IMemoryCache _memoryCache;
+        private readonly HttpContext _context;
+
+        public NOTIFIER(IMemoryCache memoryCache, HttpContext context)
+        {
+            _memoryCache = memoryCache;
+            _context = context;
+        }
+
+        public string SESSION()
+        {
+            return _context.Request.Cookies[VARIBLE.COOKIE_SESSION_NAME];
+        }
+
+        public void SETNOTIFY(List<Notifier> notifi)
+        {
+            try
+            {
+                _memoryCache.Set(VARIBLE.NAME_NOTIER + this.SESSION(), notifi);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        public List<Notifier> GETNOTIFY()
+        {
+            try
+            {
+                var name = VARIBLE.NAME_NOTIER + SESSION();
+                var ls = _memoryCache.GetOrCreate(name, ent =>
+                {
+                    var ns = new List<Notifier>();
+                    ent.SetValue(ns);
+                    var time = new MethodOne().TimeStamp() + TimeSpan.FromMinutes(1).TotalSeconds;
+                    new CacheExpireNoRuntime(_memoryCache).addCacheItem(new() { name = VARIBLE.NAME_NOTIER + SESSION(), time = Convert.ToInt32(time) });
+                    return ns;
+                });
+
+                this.DELETENOTIFY(name);
+
+                return ls;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
+
+
+        public void DELETENOTIFY(string sessid)
+        {
+
+            try
+            {
+                _memoryCache.Remove(sessid);
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+    }
+
+
 
     public static class USE_ENVIROMENT
     {
@@ -85,10 +161,11 @@ namespace BAN_BANH.Method
         private SanPham SortSanPham(SessionOrder order, List<BlockCateOnHomePage> bl)
         {
             var spOut = new SanPham();
-            foreach(var item in bl)
+            foreach (var item in bl)
             {
                 var sp = item.sanPham.Where(x => x.msp == order.msp).FirstOrDefault();
-                if (sp != null) {
+                if (sp != null)
+                {
                     spOut = sp;
                 }
                 else
@@ -103,8 +180,9 @@ namespace BAN_BANH.Method
                         .WhereEqualTo(FIREBASE_DB_FIELD.MSP, order.msp);
                     var parseTwo = new ParseDataTwo();
                     var itb = parseTwo.ListSanPham(banh.GetSnapshotAsync()).Result;
-                    if (itb.FirstOrDefault() != null) { 
-                    
+                    if (itb.FirstOrDefault() != null)
+                    {
+
                         spOut = itb.FirstOrDefault();
                         var isp = bl.Where(x => spOut.cm.Contains(x.danhMuc.Id)).FirstOrDefault();
 
@@ -161,7 +239,7 @@ namespace BAN_BANH.Method
             }
 
 
-            
+
         }
 
 
@@ -289,7 +367,7 @@ namespace BAN_BANH.Method
             else
             {
                 Environment.SetEnvironmentVariable(VARIBLE.CURRENT_ENV, VARIBLE.ENV_DEV);
-                app.UseExceptionHandler("/error/fix");
+                //app.UseExceptionHandler("/error/fix");
             }
         }
 

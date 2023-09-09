@@ -133,6 +133,11 @@ namespace BAN_BANH.Model
         public SanPham sSanPham { get; set; }
     }
 
+    public class Notifier
+    {
+        public string notifier { get; set; }
+        public bool autoDisable { get; set; }
+    }
 
     public class PieObject
     {

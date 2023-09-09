@@ -17,6 +17,13 @@
     }
 
 
+    public static class MOE
+    {
+        public static string MOE_CONTROLLER = "MOE_CONTROLLER";
+        public static string MOE_MODEL = "MOE_MODEL";
+    }
+
+
     public static class VARIBLE
     {
         public static readonly string CODER_I = "coder-5d2de";
@@ -48,12 +55,22 @@
         public static readonly string SECT_COLORI = "colori";
         public static readonly string NAME_HEADER = "Header";
         public static readonly string NAME_HEADER_DRUM = "drum";
+        public static readonly string NAME_HEADER_NORMAL = "normal";
         public static readonly string COMP_FOOTER = "Footer";
         public static readonly string COMP_COLOR_II = "ColorII";
         public static readonly string SECT_COLORII = "colorii";
         public static readonly string HUMAN_VALIDATE_URL = "https://challenges.cloudflare.com/turnstile/v0/siteverify";
         public static readonly string NAME_SECRET = "secret";
         public static readonly string NAME_RESPONSE = "response";
+        public static readonly string NAME_NOTIFIER = "Notifier";
+        public static readonly string NAME_NOTIER = "NOTIER_";
+        public static readonly dynamic DEFAULT_VIEW = null;
+        public static readonly string STATIC_UPDATE_NAME = "1694268261";
+
+        public static readonly bool IS_NEAD_PARKING = false;
+        public static readonly bool PARKING_AND_CONTINUTE = false;
+        public static readonly int PARKING_TIME_SECOND = 10000;
+
 
 
         public static readonly List<string> LIST_COLOR_I = new List<string>()
@@ -62,7 +79,6 @@
             "/css/aos.min.css",
             "/css/animate.min.css",
             "/css/color.css",
-            "/css/Swiper-Image.css",
         };
         public static readonly List<string> LIST_COLOR_II = new List<string>()
         {
@@ -75,12 +91,22 @@
     }
 
 
+    public static class NOTIFY
+    {
+        public static readonly Notifier ORDER_SUCCESS = new Notifier()
+        {
+            notifier = "Đơn đặt hàng của bạn đã được ghi lại thành công",
+            autoDisable = false
+        };
+    }
+
+
     public static class ENV_KEY
     {
         public static readonly string ENV_API_ORDER_DEV = "https://localhost:7152/";
         public static readonly string ENV_API_ORDER_PRO = "http://www.content-file-banbanh.somee.com/";
-        public static readonly string ENV_STATIC_DEV = "http://localhost:4320/1694105503/";
-        public static readonly string ENV_STATIC_PRO = "http://www.content-file-banbanh.somee.com/";
+        public static readonly string ENV_STATIC_DEV = "http://localhost:55796/" + VARIBLE.STATIC_UPDATE_NAME + "/";
+        public static readonly string ENV_STATIC_PRO = "https://banbanh-static-load.pages.dev/" + VARIBLE.STATIC_UPDATE_NAME + "/";
 
     }
 
@@ -100,7 +126,7 @@
     }
 
 
-    public static class  FIREBASE_DB_COLLECTION
+    public static class FIREBASE_DB_COLLECTION
     {
         public static readonly string BANBANH = "BANBANH";
         public static readonly string SANPHAM = "SANPHAM";
@@ -109,7 +135,7 @@
         public static readonly string EVENT = "EVENT";
         public static readonly string ANHSANPHAM = "ANHSANPHAM";
         public static readonly string BB_ORDER_NC = "BANBANH_ORDER_NOT_CASH";
-   
+
     }
 
     public static class FIREBASE_DB_FIELD

@@ -1,4 +1,8 @@
-﻿@using BAN_BANH.Model
+﻿@using BAN_BANH.Method;
+@using BAN_BANH.Model
+@using Microsoft.Extensions.Caching.Memory;
+@using Newtonsoft.Json;
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,20 +11,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>BANBANH</title>
 
+    <colori></colori>
+
     @await Component.InvokeAsync(VARIBLE.COMP_COLORI)
 
     @await RenderSectionAsync(VARIBLE.SECT_COLORI, required: false)
 </head>
 <body>
-    @await Component.InvokeAsync(VARIBLE.NAME_HEADER, VARIBLE.NAME_HEADER_DRUM)
+    @await Component.InvokeAsync(VARIBLE.NAME_HEADER, VARIBLE.NAME_HEADER_NORMAL)
     <div class="container">
             @RenderBody()
     </div>
 
     @await Component.InvokeAsync(VARIBLE.COMP_FOOTER)
 
-    @await Component.InvokeAsync(VARIBLE.COMP_COLOR_II);
+    @await Component.InvokeAsync(VARIBLE.COMP_COLOR_II)
 
     @await RenderSectionAsync(VARIBLE.SECT_COLORII, required: false)
+    @await Component.InvokeAsync(VARIBLE.NAME_NOTIFIER)
+
+
+
+
 </body>
 </html>

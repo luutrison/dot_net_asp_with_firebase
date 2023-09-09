@@ -18,6 +18,7 @@
         public static readonly string STAR = "star";
         public static readonly string ORDER_LIST = "ORDER_LIST";
         public static readonly string HOME_BLOCK = "HOME_BLOCK";
+        public static readonly string NOTIFIER = "NOTIFIER";
 
     }
 }

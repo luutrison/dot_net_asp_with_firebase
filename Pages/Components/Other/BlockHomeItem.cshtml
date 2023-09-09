@@ -1,4 +1,5 @@
-﻿@model List<BAN_BANH.Model.BlockCateOnHomePage>
+﻿@using BAN_BANH.Method;
+@model List<BAN_BANH.Model.BlockCateOnHomePage>
 @{
 }
 
@@ -16,7 +17,7 @@
         <div class="container" id="@id">
             <div class="category-home">
                 <a href="@Model[i].danhMuc.url">
-                <h2>@Model[i].danhMuc.name</h2><img src="@Method.METHOD.URI_STATIC("/img/design/brush.svg")">
+                <h2>@Model[i].danhMuc.name</h2><img src="@METHOD.URI_STATIC("/img/design/brush.svg")">
                 </a>
             </div>
             <div class="row gx-0 row-cols-3 row-cols-lg-3 row-cols-xxl-4 rliscake m-0">
