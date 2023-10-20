@@ -79,6 +79,7 @@
             "/css/aos.min.css",
             "/css/animate.min.css",
             "/css/color.css",
+            "/extends/notifier/notifier.css"
         };
         public static readonly List<string> LIST_COLOR_II = new List<string>()
         {
@@ -87,6 +88,7 @@
             "/js/aos.min.js",
             "/js/bs-init.js",
             "/js/color.js",
+            "/extends/notifier/notifier.js"
         };
     }
 
@@ -103,9 +105,9 @@
 
     public static class ENV_KEY
     {
-        public static readonly string ENV_API_ORDER_DEV = "https://localhost:7152/";
+        public static readonly string ENV_API_ORDER_DEV = "https://localhost:5200/";
         public static readonly string ENV_API_ORDER_PRO = "http://www.content-file-banbanh.somee.com/";
-        public static readonly string ENV_STATIC_DEV = "http://localhost:55796/" + VARIBLE.STATIC_UPDATE_NAME + "/";
+        public static readonly string ENV_STATIC_DEV = "https://banbanh-static-load.pages.dev/" + VARIBLE.STATIC_UPDATE_NAME + "/";
         public static readonly string ENV_STATIC_PRO = "https://banbanh-static-load.pages.dev/" + VARIBLE.STATIC_UPDATE_NAME + "/";
 
     }

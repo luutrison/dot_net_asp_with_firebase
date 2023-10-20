@@ -10,13 +10,13 @@ namespace BAN_BANH.Pages.Product
 {
     public class IndexController : IMOE
     {
-        private readonly IConfiguration _configuration;
-        private readonly IMemoryCache _memoryCache;
+        public  IConfiguration _configuration;
 
         public IndexController(IConfiguration configuration, IMemoryCache memoryCache)
         {
-            _configuration = configuration;
-            _memoryCache = memoryCache;
+            this._configuration = configuration;
+            this._memoryCache = memoryCache;
+
         }
 
 
@@ -67,11 +67,11 @@ namespace BAN_BANH.Pages.Product
 
             try
             {
+                USE_ENVIROMENT.ENVIROMENT_CODER_I();
 
                 new SESSION_COOKIE(HttpContext, _memoryCache);
 
                 var nmsp = FIREBASE_DB_FIELD.MSP;
-                USE_ENVIROMENT.ENVIROMENT_CODER_I();
                 string msp = RouteData.Values[nmsp].ToString();
                 var db = FirestoreDb.Create(VARIBLE.CODER_I);
                 var soSao = new DB_DOCUMENT(db).CLIENT().Collection(FIREBASE_DB_COLLECTION.SOSAO);
@@ -134,6 +134,32 @@ namespace BAN_BANH.Pages.Product
             {
                 new MethodOne().LogsError(err.ToString());
                 throw;
+            }
+
+        }
+
+        [HttpGet("/one/get-product")]
+        public async Task<JsonResult> GetProduct()
+        {
+            try {
+                this._httpContext = HttpContext;
+
+                return CHECK.OK(this).THEN(props =>
+                {
+
+
+                  var ls = new PRODUCT(_memoryCache).BlockCateOnHome();
+
+                    return Json(ls);
+
+
+
+                });
+
+            } catch (Exception err) { 
+                new MethodOne().LogsError(err.ToString());
+                return null;
+
             }
 
         }
